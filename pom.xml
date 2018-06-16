@@ -14,9 +14,9 @@
   <url>http://www.example.com</url>
 
   <properties>
+    <java.version>1.8</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <corenlp.version>3.6.0</corenlp.version>
   </properties>
 
   <dependencies>
@@ -26,7 +26,82 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+
+    <!-- 请求返回的json数据的解析-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.46</version>
+    </dependency>
+
+    <!--请求获取移动数据信息 -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.5</version>
+    </dependency>
+
+    <dependency>
+      <!--连接池类库-->
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>1.4</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>6.0.5</version>
+    </dependency>
+
+    <!--推荐算法库-->
+    <!-- https://mvnrepository.com/artifact/net.librec/librec-core -->
+    <dependency>
+      <groupId>net.librec</groupId>
+      <artifactId>librec-core</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <!--mongoDB java-->
+    <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+    <!-- <dependency>
+       <groupId>org.mongodb</groupId>
+       <artifactId>mongo-java-driver</artifactId>
+       <version>3.6.1</version>
+     </dependency>
+ -->
+
+    <!--知识图谱-->
+    <dependency>
+      <groupId>org.neo4j.driver</groupId>
+      <artifactId>neo4j-java-driver</artifactId>
+      <version>1.4.4</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+    <dependency>
+      <groupId>commons-net</groupId>
+      <artifactId>commons-net</artifactId>
+      <version>3.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>3.5.0</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.2.3</version>
+    </dependency>
+
   </dependencies>
+
+
 
   <build>
     <finalName>kp</finalName>
@@ -63,5 +138,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.7</source>
+                  <target>1.7</target>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>
