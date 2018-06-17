@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.knowledge.Annotations.FieldMethodAnnotation;
 import com.knowledge.domain.XieChengDomains.*;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import org.bson.Document;
@@ -12,11 +13,15 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * 携程工具类
  */
 public class XieChengUtils {
 
+    private static final  ExecutorService executorService = Executors.newFixedThreadPool(10);
     public static Object DocumentConvextToModel(String className, Document document) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
         Set<String> strings = document.keySet();
         Class<?> aClass = Class.forName(className);
@@ -100,7 +105,7 @@ public class XieChengUtils {
                System.out.println(xichotel.getShop_room_recommend_all());
                XieChengHotelAllRooms xieRooms = JSON.parseObject(xichotel.getShop_room_recommend_all(), XieChengHotelAllRooms.class);
                System.out.println(xieRooms);
-               Neo4jUtils neo4jUtils = new Neo4jUtils("bolt://192.168.199.202:7687", "neo4j", "09120912");
+               Neo4jUtils neo4jUtils = new Neo4jUtils(null);
                neo4jUtils.CreateXieChengDataToNeo4jNode(xichotel,AroundFacility, statistics, xieRooms,combinationHotelIntro);
            }
        }catch (Exception ex){
@@ -119,15 +124,15 @@ public class XieChengUtils {
         WriteXieChengStaticDatatToNeo4j();
         MongoClient localServiceClient = MongoDBConnectionUtils.getLocalServiceClient();
         MongoCollection<Document> collection = localServiceClient.getDatabase("hotel").getCollection("xiechenghotelcomment");
-        MongoCursor<Document> iterator = collection.find().iterator();
+        MongoCursor<Document> iterator = collection.find().noCursorTimeout(true).iterator();
         while (iterator.hasNext()) {
             Document document = iterator.next();
             XieChengHotelComments xieChengHotelComments = (XieChengHotelComments) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotelComments", document);
             System.out.println("------------------------------");
             System.out.println(xieChengHotelComments.getComment_user_name()+"  "+xieChengHotelComments.getComment_user_check_in());
             System.out.println("------------------------------");
-            Neo4jUtils neo4jUtils = new Neo4jUtils("bolt://192.168.199.202:7687", "neo4j", "09120912");
-            neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
+            executorService.submit(new Neo4jUtils(xieChengHotelComments));
+            //neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
         }
         localServiceClient.close();
     }

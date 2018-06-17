@@ -10,19 +10,25 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
  * Neo4j工具类
  */
-public class Neo4jUtils {
+public class Neo4jUtils  implements Callable<String>{
 
 
     private final Driver driver;
+    private static final String uri = "bolt://192.168.199.202:7687";
+    private static final String user="neo4j";
+    private static final String password = "09120912";
+    private XieChengHotelComments xieChengHotelComments;
 
-    public Neo4jUtils(String uri, String user, String password) {
+    public Neo4jUtils(XieChengHotelComments xieChengHotelComments) {
         this.driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
+        this.xieChengHotelComments = xieChengHotelComments;
     }
 
     private void close() throws Exception {
@@ -214,7 +220,7 @@ public class Neo4jUtils {
     }
 
 
-    public void CreateXieChengCommentDataToNeo4jNode(final XieChengHotelComments xieChengHotelComments) {
+    private void CreateXieChengCommentDataToNeo4jNode(final XieChengHotelComments xieChengHotelComments) {
 
         try {
             final String comment_content = xieChengHotelComments.getComment_content();
@@ -256,5 +262,11 @@ public class Neo4jUtils {
             }
         }
 
+    }
+
+    @Override
+    public String call() throws Exception {
+        this.CreateXieChengCommentDataToNeo4jNode(this.xieChengHotelComments);
+        return null;
     }
 }
