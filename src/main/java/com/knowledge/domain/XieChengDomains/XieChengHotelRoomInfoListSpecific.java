@@ -104,10 +104,26 @@ public class XieChengHotelRoomInfoListSpecific {
     }
 
     public String getSatisfactionDegree() {
+
+        //预处理以下数据
+        satisfactionDegree=satisfactionDegree.replace("\"","'");
         return satisfactionDegree;
     }
 
     public void setSatisfactionDegree(String satisfactionDegree) {
         this.satisfactionDegree = satisfactionDegree;
     }
+
+
+    public static void main(String... args) {
+
+        XieChengHotelRoomInfoListSpecific xieChengHotelRoomInfoListSpecific = new XieChengHotelRoomInfoListSpecific();
+        String stm = "(\"氦气球体验\"套餐)闪住 礼预订满意度 91%";
+        System.out.println(stm);
+        String stn=stm.replace("\"","'");
+        System.out.println(stn);
+        xieChengHotelRoomInfoListSpecific.setSatisfactionDegree("\""+stn+"\",snnn");
+        System.out.println(xieChengHotelRoomInfoListSpecific.getSatisfactionDegree());
+    }
+
 }

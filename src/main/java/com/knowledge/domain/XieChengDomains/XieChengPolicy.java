@@ -25,7 +25,7 @@ public class XieChengPolicy implements Serializable {
     @JSONField(name = "宠物")
     private List<String> pets;
 
-    @FieldMethodAnnotation(MethodName = "getPets",SelectElementsTypes = "0:1:1")
+    @FieldMethodAnnotation(MethodName = "getDietArragment",SelectElementsTypes = "0:1:1")
     @JSONField(name = "膳食安排")
     private List<String> dietArragment;
 

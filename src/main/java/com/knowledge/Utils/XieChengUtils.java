@@ -66,47 +66,69 @@ public class XieChengUtils {
     }
 
 
+    //把携程酒店静态数据写入到图数据库
 
+    private  static void  WriteXieChengStaticDatatToNeo4j() {
+        MongoClient localServiceClient = null;
+        try{
+          localServiceClient=
+                   MongoDBConnectionUtils.getLocalServiceClient();
+           MongoCollection<Document> collection =
+                   localServiceClient.getDatabase("hotel").getCollection("xiechenghotel");
+           MongoCursor<Document> iterator =
+                   collection.find().iterator();
+           while (iterator.hasNext()) {
+               Document document = iterator.next();
+               XieChengHotel xichotel = (XieChengHotel) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotel", document);
+               System.out.println("-----------------------------");
+               System.out.println(xichotel.getShop_name());
+               System.out.println(xichotel.getShop_url());
+               System.out.println("------------------------------");
+               //解析 酒店介绍信息
+               XieChengCombinationHotelIntro combinationHotelIntro = (XieChengCombinationHotelIntro) XieChengIntroConvertToDomains(xichotel.getShop_intro(), "com.knowledge.domain.XieChengDomains.XieChengCombinationHotelIntro");
+               System.out.println(combinationHotelIntro);
+
+               //解析周边信息
+               XieChengAroundFacility AroundFacility = JSON.parseObject(xichotel.getShop_around_facilities(), XieChengAroundFacility.class);
+               System.out.println(AroundFacility);
+
+               //解析携程评论数据
+               XieChengShopStatistics statistics = JSON.parseObject(xichotel.getShop_statistics(), XieChengShopStatistics.class);
+               System.out.println(statistics);
+
+               //房型信息
+               System.out.println(xichotel.getShop_room_recommend_all());
+               XieChengHotelAllRooms xieRooms = JSON.parseObject(xichotel.getShop_room_recommend_all(), XieChengHotelAllRooms.class);
+               System.out.println(xieRooms);
+               Neo4jUtils neo4jUtils = new Neo4jUtils("bolt://192.168.199.202:7687", "neo4j", "09120912");
+               neo4jUtils.CreateXieChengDataToNeo4jNode(xichotel,AroundFacility, statistics, xieRooms,combinationHotelIntro);
+           }
+       }catch (Exception ex){
+            ex.printStackTrace();
+       }finally {
+           if(localServiceClient!=null)
+            localServiceClient.close();
+        }
+    }
 
 
 
     public static void main(String... args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException, NoSuchMethodException, ClassNotFoundException {
-        MongoClient localServiceClient =
-                MongoDBConnectionUtils.getLocalServiceClient();
-        MongoCollection<Document> collection =
-                localServiceClient.getDatabase("hotel").getCollection("xiechenghotel");
-        MongoCursor<Document> iterator =
-                collection.find().iterator();
+
+
+        WriteXieChengStaticDatatToNeo4j();
+        MongoClient localServiceClient = MongoDBConnectionUtils.getLocalServiceClient();
+        MongoCollection<Document> collection = localServiceClient.getDatabase("hotel").getCollection("xiechenghotelcomment");
+        MongoCursor<Document> iterator = collection.find().iterator();
         while (iterator.hasNext()) {
-
             Document document = iterator.next();
-
-            XieChengHotel xichotel = (XieChengHotel) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotel", document);
-
-            //解析 酒店介绍信息
-            XieChengCombinationHotelIntro combinationHotelIntro = (XieChengCombinationHotelIntro) XieChengIntroConvertToDomains(xichotel.getShop_intro(), "com.knowledge.domain.XieChengDomains.XieChengCombinationHotelIntro");
-            System.out.println(combinationHotelIntro);
-
-            //解析周边信息
-            System.out.println(xichotel.getShop_statistics());
-            XieChengAroundFacility AroundFacility = JSON.parseObject("{\"景点\": [\"中心湖区景点\"], \"娱乐\": [\"进贤湾水上乐园，水下古城文化科技主题乐园\"]}", XieChengAroundFacility.class);
-            System.out.println(AroundFacility);
-
-            //解析携程评论数据
-            XieChengShopStatistics statistics = JSON.parseObject(xichotel.getShop_statistics(), XieChengShopStatistics.class);
-            System.out.println(statistics);
-            //房型信息
-            System.out.println(xichotel.getShop_room_recommend_all());
-            XieChengHotelAllRooms xieRooms = JSON.parseObject(xichotel.getShop_room_recommend_all(), XieChengHotelAllRooms.class);
-            System.out.println(xieRooms);
+            XieChengHotelComments xieChengHotelComments = (XieChengHotelComments) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotelComments", document);
+            System.out.println("------------------------------");
+            System.out.println(xieChengHotelComments.getComment_user_name()+"  "+xieChengHotelComments.getComment_user_check_in());
+            System.out.println("------------------------------");
             Neo4jUtils neo4jUtils = new Neo4jUtils("bolt://192.168.199.202:7687", "neo4j", "09120912");
-//        neo4jUtils.CreateXieChengDataToNeo4jNode(xichotel,AroundFacility, statistics, xieRooms,combinationHotelIntro);
-
-
-
+            neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
         }
-
+        localServiceClient.close();
     }
-
-
 }

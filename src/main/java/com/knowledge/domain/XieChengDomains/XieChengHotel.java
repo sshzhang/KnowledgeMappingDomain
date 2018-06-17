@@ -7,53 +7,53 @@ import java.util.regex.Pattern;
 
 //携程酒店数据集
 public class XieChengHotel {
-    @FieldMethodAnnotation(MethodName = "set_id",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "set_id")
     private String _id;//MongoDB的id
-    @FieldMethodAnnotation(MethodName = "setCrawl_time",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setCrawl_time")
     private String crawl_time;//爬取时间
-    @FieldMethodAnnotation(MethodName = "setData_region",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setData_region")
     private String data_region;//数据区域
-    @FieldMethodAnnotation(MethodName = "setData_source",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setData_source")
     private String data_source;//数据类型 酒店
-    @FieldMethodAnnotation(MethodName = "setData_website",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setData_website")
     private String data_website;//数据来源站点
-    @FieldMethodAnnotation(MethodName = "setShop_active_status",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_active_status")
     private String shop_active_status;//最新时间
-    @FieldMethodAnnotation(MethodName = "setShop_address",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_address")
     private String shop_address;//酒店地址
-    @FieldMethodAnnotation(MethodName = "setShop_around_facilities",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_around_facilities")
     private String shop_around_facilities;//酒店周边设施
-    @FieldMethodAnnotation(MethodName = "setShop_category_name",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_category_name")
     private String shop_category_name;//酒店类别信息
     @FieldMethodAnnotation(MethodName = "setShop_comment_num",ParameterType =int.class)
     private int shop_comment_num;//酒店评论总数
     @FieldMethodAnnotation(MethodName = "setShop_grade",ParameterType =float.class)
     private float shop_grade;//酒店总体评分
-    @FieldMethodAnnotation(MethodName = "setShop_grade_text",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_grade_text")
     private String shop_grade_text;//酒店总体评价
     @FieldMethodAnnotation(MethodName = "setShop_id",ParameterType =int.class)
     private int  shop_id;//酒店id
-    @FieldMethodAnnotation(MethodName = "setShop_img",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_img")
     private String shop_img;//酒店图片地址
-    @FieldMethodAnnotation(MethodName = "setShop_intro",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_intro")
     private  String shop_intro;//酒店介绍
-    @FieldMethodAnnotation(MethodName = "setShop_name",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_name")
     private String shop_name;//酒店名称
-    @FieldMethodAnnotation(MethodName = "setShop_phone",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_phone")
     private String shop_phone;//酒店电话
     @FieldMethodAnnotation(MethodName = "setShop_price",ParameterType =float.class)
     private float shop_price;//价格
-    @FieldMethodAnnotation(MethodName = "setShop_rate",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_rate")
     private String shop_rate;//酒店类似星际的皇冠数量
-    @FieldMethodAnnotation(MethodName = "setShop_room_favourable",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_room_favourable")
     private String shop_room_favourable;//酒店优惠房型
-    @FieldMethodAnnotation(MethodName = "setShop_room_recommend_all",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_room_recommend_all")
     private String shop_room_recommend_all;//酒店推荐房型
-    @FieldMethodAnnotation(MethodName = "setShop_satisfaction_percent",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_satisfaction_percent")
     private String shop_satisfaction_percent;//酒店的满意比率
-    @FieldMethodAnnotation(MethodName = "setShop_statistics",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_statistics")
     private String shop_statistics;//酒店点评数据
-    @FieldMethodAnnotation(MethodName = "setShop_url",ParameterType =String.class)
+    @FieldMethodAnnotation(MethodName = "setShop_url")
     private String shop_url;//酒店url
     private static String rate_desc[];
     static {
@@ -137,6 +137,8 @@ public class XieChengHotel {
     }
 
     public String getShop_address() {
+        //处理特殊字符
+        shop_address = shop_address.replace("\"", "'");
         return shop_address;
     }
 

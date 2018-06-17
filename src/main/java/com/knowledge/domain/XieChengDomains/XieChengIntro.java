@@ -33,6 +33,7 @@ public class XieChengIntro  implements Serializable{
     }
 
     public String getOther() {
+        other = other.replace("\"", "'");
         return other;
     }
 

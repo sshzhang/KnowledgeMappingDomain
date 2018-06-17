@@ -95,6 +95,9 @@ public class XieChengHotelRoom_detailSpecific implements Serializable {
     }
 
     public String getHomeType() {
+        if (homeType != null && (!"".equals(homeType))) {
+            homeType = homeType.split(" ")[0];
+        }
         return homeType;
     }
 
