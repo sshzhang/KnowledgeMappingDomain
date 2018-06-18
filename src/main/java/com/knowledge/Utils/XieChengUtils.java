@@ -43,7 +43,6 @@ public class XieChengUtils {
         return dest;
     }
 
-
     /**
      *   目前只用于 携程XieChengHotel.shop_intro数据转化 domain  XieChengCombinationHotelIntro
      * @param strshop_intro  表示需要解析的json字符串
@@ -134,6 +133,8 @@ public class XieChengUtils {
             executorService.submit(new Neo4jUtils(xieChengHotelComments));
             //neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
         }
+        executorService.shutdown();
         localServiceClient.close();
+
     }
 }
