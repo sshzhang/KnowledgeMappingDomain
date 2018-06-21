@@ -27,7 +27,7 @@ public class MongoDBConnectionUtils {
         return localServiceClient;
     }
 
-    public static MongoClient getREmoteServiceClient() {
+    public static MongoClient getRemoteServiceClient() {
             remoteServideClient = remoteConnection("10.1.17.15");
         return remoteServideClient;
     }

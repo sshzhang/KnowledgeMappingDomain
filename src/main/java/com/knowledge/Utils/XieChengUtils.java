@@ -5,10 +5,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.knowledge.Annotations.FieldMethodAnnotation;
 import com.knowledge.domain.XieChengDomains.*;
 import com.mongodb.MongoClient;
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import org.bson.Document;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -135,6 +135,5 @@ public class XieChengUtils {
         }
         executorService.shutdown();
         localServiceClient.close();
-
     }
 }
