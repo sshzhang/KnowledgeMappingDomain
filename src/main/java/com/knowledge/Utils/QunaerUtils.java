@@ -12,7 +12,6 @@ import org.bson.Document;
 
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 /**
  * 去哪儿工具类
@@ -67,8 +66,6 @@ public class QunaerUtils {
                      */
                     System.out.println(object.keySet() + "  " + object.values());
                 }
-
-
                 //统计评论信息
                 String shop_statistics = qunaerHotel.getShop_statistics();
                 System.out.println("shop_statistics: "+shop_statistics);
@@ -83,5 +80,4 @@ public class QunaerUtils {
             localServiceClient.close();
         }
     }
-
 }

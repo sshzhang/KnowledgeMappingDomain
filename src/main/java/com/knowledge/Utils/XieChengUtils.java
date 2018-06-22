@@ -7,6 +7,7 @@ import com.knowledge.domain.XieChengDomains.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.model.Filters;
 import org.bson.Document;
 
 import java.lang.reflect.Field;
@@ -75,13 +76,17 @@ public class XieChengUtils {
     private  static void  WriteXieChengStaticDatatToNeo4j() {
         MongoClient localServiceClient = null;
         try{
-          localServiceClient=
-                   MongoDBConnectionUtils.getLocalServiceClient();
-           MongoCollection<Document> collection =
-                   localServiceClient.getDatabase("hotel").getCollection("xiechenghotel");
-           MongoCursor<Document> iterator =
-                   collection.find().iterator();
-           while (iterator.hasNext()) {
+//          localServiceClient=
+//                   MongoDBConnectionUtils.getLocalServiceClient();
+//           MongoCollection<Document> collection =
+//                   localServiceClient.getDatabase("hotel").getCollection("xiechenghotel");
+//           MongoCursor<Document> iterator =
+//                   collection.find().iterator();
+
+            MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
+            MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("shops");
+            MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_source", "酒店"), Filters.eq("data_website", "携程"))).iterator();
+            while (iterator.hasNext()) {
                Document document = iterator.next();
                XieChengHotel xichotel = (XieChengHotel) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotel", document);
                System.out.println("-----------------------------");
@@ -121,9 +126,13 @@ public class XieChengUtils {
 
 
         WriteXieChengStaticDatatToNeo4j();
-        MongoClient localServiceClient = MongoDBConnectionUtils.getLocalServiceClient();
-        MongoCollection<Document> collection = localServiceClient.getDatabase("hotel").getCollection("xiechenghotelcomment");
-        MongoCursor<Document> iterator = collection.find().noCursorTimeout(true).iterator();
+//        MongoClient localServiceClient = MongoDBConnectionUtils.getLocalServiceClient();
+//        MongoCollection<Document> collection = localServiceClient.getDatabase("hotel").getCollection("xiechenghotelcomment");
+//        MongoCursor<Document> iterator = collection.find().noCursorTimeout(true).iterator();
+
+        MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
+        MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
+        MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "携程"), Filters.eq("data_source", "酒店"))).iterator();
         while (iterator.hasNext()) {
             Document document = iterator.next();
             XieChengHotelComments xieChengHotelComments = (XieChengHotelComments) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotelComments", document);
@@ -134,6 +143,6 @@ public class XieChengUtils {
             //neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
         }
         executorService.shutdown();
-        localServiceClient.close();
+        remoteServiceClient.close();
     }
 }
