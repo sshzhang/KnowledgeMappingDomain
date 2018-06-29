@@ -3,6 +3,9 @@ package com.knowledge.Utils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.knowledge.Utils.CommonUtilsPackage.DataTransformateCommonUtils;
+import com.knowledge.Utils.CommonUtilsPackage.MongoDBConnectionUtils;
+import com.knowledge.Utils.DomainUtilsPackage.XieChengHotelUtils;
 import com.knowledge.domain.QunaerDomains.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -29,7 +32,7 @@ public class QunaerUtils {
                     collection.find(Filters.and(Filters.eq("data_website", "去哪儿"), Filters.eq("data_source", "酒店"))).iterator();
             while (iterator.hasNext()) {
                 Document document = iterator.next();
-                QunaerHotel qunaerHotel = (QunaerHotel) XieChengUtils.DocumentConvextToModel("com.knowledge.domain.QunaerDomains.QunaerHotel", document);
+                QunaerHotel qunaerHotel = (QunaerHotel) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.QunaerDomains.QunaerHotel", document);
                 System.out.println(qunaerHotel.getShop_name() + "  " + qunaerHotel.getShop_room_recommend_all());
                 if ((!"".equals(qunaerHotel.getShop_room_recommend_all())) && qunaerHotel.getShop_room_recommend_all() != null) {
                     //设置去哪儿房屋信息

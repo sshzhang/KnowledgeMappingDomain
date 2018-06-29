@@ -1,8 +1,11 @@
-package com.knowledge.Utils;
+package com.knowledge.Utils.DomainUtilsPackage;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.knowledge.Annotations.FieldMethodAnnotation;
+import com.knowledge.Utils.CommonUtilsPackage.DataTransformateCommonUtils;
+import com.knowledge.Utils.CommonUtilsPackage.MongoDBConnectionUtils;
+import com.knowledge.Utils.Neo4jUtilsPackage.XieChengHotelNeo4jUtils;
 import com.knowledge.domain.XieChengDomains.*;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -13,36 +16,16 @@ import org.bson.Document;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
  * 携程工具类
  */
-public class XieChengUtils {
+public class XieChengHotelUtils {
 
     private static final  ExecutorService executorService = Executors.newFixedThreadPool(10);
-    public static Object DocumentConvextToModel(String className, Document document) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
-        Set<String> strings = document.keySet();
-        Class<?> aClass = Class.forName(className);
-        Object dest = aClass.newInstance();
-        for (String strKey : strings) {
-            Field field = aClass.getDeclaredField(strKey);
-            FieldMethodAnnotation annotation = field.getAnnotation(FieldMethodAnnotation.class);
-            String methodName = annotation.MethodName();
-            Class<?> classType = annotation.ParameterType();
-            Method method = aClass.getMethod(methodName, classType);
-            if (String.class.isAssignableFrom(classType)) {
-                method.invoke(dest, document.get(strKey).toString());
-            } else if (int.class.isAssignableFrom(classType)) {
-                method.invoke(dest, Integer.parseInt(document.get(strKey).toString()));
-            } else if (float.class.isAssignableFrom(classType)) {
-                method.invoke(dest, Float.parseFloat(document.get(strKey).toString()));
-            }
-        }
-        return dest;
-    }
+
 
     /**
      *   目前只用于 携程XieChengHotel.shop_intro数据转化 domain  XieChengCombinationHotelIntro
@@ -88,7 +71,7 @@ public class XieChengUtils {
             MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_source", "酒店"), Filters.eq("data_website", "携程"))).iterator();
             while (iterator.hasNext()) {
                Document document = iterator.next();
-               XieChengHotel xichotel = (XieChengHotel) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotel", document);
+               XieChengHotel xichotel = (XieChengHotel) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotel", document);
                System.out.println("-----------------------------");
                System.out.println(xichotel.getShop_name());
                System.out.println(xichotel.getShop_url());
@@ -109,7 +92,7 @@ public class XieChengUtils {
                System.out.println(xichotel.getShop_room_recommend_all());
                XieChengHotelAllRooms xieRooms = JSON.parseObject(xichotel.getShop_room_recommend_all(), XieChengHotelAllRooms.class);
                System.out.println(xieRooms);
-               Neo4jUtils neo4jUtils = new Neo4jUtils(null);
+                XieChengHotelNeo4jUtils neo4jUtils = new XieChengHotelNeo4jUtils(null);
                neo4jUtils.CreateXieChengDataToNeo4jNode(xichotel,AroundFacility, statistics, xieRooms,combinationHotelIntro);
            }
        }catch (Exception ex){
@@ -135,11 +118,11 @@ public class XieChengUtils {
         MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "携程"), Filters.eq("data_source", "酒店"))).iterator();
         while (iterator.hasNext()) {
             Document document = iterator.next();
-            XieChengHotelComments xieChengHotelComments = (XieChengHotelComments) DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotelComments", document);
+            XieChengHotelComments xieChengHotelComments = (XieChengHotelComments) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotelComments", document);
             System.out.println("------------------------------");
             System.out.println(xieChengHotelComments.getComment_user_name()+"  "+xieChengHotelComments.getComment_user_check_in());
             System.out.println("------------------------------");
-            executorService.submit(new Neo4jUtils(xieChengHotelComments));
+            executorService.submit(new XieChengHotelNeo4jUtils(xieChengHotelComments));
             //neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
         }
         executorService.shutdown();

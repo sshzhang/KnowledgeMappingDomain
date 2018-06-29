@@ -1,4 +1,4 @@
-package com.knowledge.Utils;
+package com.knowledge.Utils.CommonUtilsPackage;
 
 import com.mongodb.MongoClient;
 import com.mongodb.ServerAddress;

@@ -1,39 +1,27 @@
-package com.knowledge.Utils;
+package com.knowledge.Utils.Neo4jUtilsPackage;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.knowledge.Annotations.FieldMethodAnnotation;
+import com.knowledge.Utils.Neo4jUtilsPackage.Neo4jUtils;
 import com.knowledge.domain.XieChengDomains.*;
-import org.neo4j.driver.v1.*;
+import org.neo4j.driver.v1.Session;
+import org.neo4j.driver.v1.StatementResult;
+import org.neo4j.driver.v1.Transaction;
+import org.neo4j.driver.v1.TransactionWork;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Neo4j工具类
- */
-public class Neo4jUtils  implements Callable<String>{
+public class XieChengHotelNeo4jUtils extends Neo4jUtils {
 
-
-    private final Driver driver;
-    private static final String uri = "bolt://192.168.199.202:7687";
-    private static final String user="neo4j";
-    private static final String password = "09120912";
     private XieChengHotelComments xieChengHotelComments;
 
-    public Neo4jUtils(XieChengHotelComments xieChengHotelComments) {
-        this.driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
+    public XieChengHotelNeo4jUtils(XieChengHotelComments xieChengHotelComments) {
+        super();
         this.xieChengHotelComments = xieChengHotelComments;
-    }
-
-    private void close() throws Exception {
-        if (this.driver != null)
-            this.driver.close();
     }
 
 
@@ -61,12 +49,12 @@ public class Neo4jUtils  implements Callable<String>{
 
                             List<XieChengHotelRoomInfoListSpecific> room_info_lists = all_room.getRoom_info_list();
 
-                            tx.run("merge(ho:Home{HomeType:\"" + room_detail.getHomeType() + "\",beizhuxinxi:\"" + room_detail.getNoSmaokingMeasure() + "\",bianlisheshi:\"" + room_detail.getConvientFacility() + "\",chuanxing:\"" + room_detail.getBedType() + "\",floor:\"" + room_detail.getFloor() + "\",jianzhumianji:\"" + room_detail.getBuidingArea() + "\",kejiachuang:\"" + room_detail.getIncreaseBed() + "\",yushi:\"" + room_detail.getBedthroom() + "\",hotel_id:\""+hotel_id+"\"})");
-                            tx.run("match(sfm:XCHotel{hotel_id:\"" + hotel_id + "\",Shope_name:\"" + xichotel.getShop_name() + "\",Shop_address:\"" + xichotel.getShop_address() + "\",Shop_sepcific_introduce:\"" + Shop_sepcific_introduce + "\",shope_url:\"" + xichotel.getShop_url() + "\",data_website:\"" + xichotel.getData_website() + "\",shop_rate:\"" + xichotel.getShop_rate() + "\"}),(hom:Home{HomeType:\"" + room_detail.getHomeType() + "\",beizhuxinxi:\"" + room_detail.getNoSmaokingMeasure() + "\",bianlisheshi:\"" + room_detail.getConvientFacility() + "\",chuanxing:\"" + room_detail.getBedType() + "\",floor:\"" + room_detail.getFloor() + "\",jianzhumianji:\"" + room_detail.getBuidingArea() + "\",kejiachuang:\"" + room_detail.getIncreaseBed() + "\",yushi:\"" + room_detail.getBedthroom() + "\",hotel_id:\""+hotel_id+"\"}) merge(sfm)-[:IncludeHomeTypes{name:\"包含的房间类型\"}]->(hom)");
+                            tx.run("merge(ho:Home{HomeType:\"" + room_detail.getHomeType() + "\",beizhuxinxi:\"" + room_detail.getNoSmaokingMeasure() + "\",bianlisheshi:\"" + room_detail.getConvientFacility() + "\",chuanxing:\"" + room_detail.getBedType() + "\",floor:\"" + room_detail.getFloor() + "\",jianzhumianji:\"" + room_detail.getBuidingArea() + "\",kejiachuang:\"" + room_detail.getIncreaseBed() + "\",yushi:\"" + room_detail.getBedthroom() + "\",hotel_id:\"" + hotel_id + "\"})");
+                            tx.run("match(sfm:XCHotel{hotel_id:\"" + hotel_id + "\",Shope_name:\"" + xichotel.getShop_name() + "\",Shop_address:\"" + xichotel.getShop_address() + "\",Shop_sepcific_introduce:\"" + Shop_sepcific_introduce + "\",shope_url:\"" + xichotel.getShop_url() + "\",data_website:\"" + xichotel.getData_website() + "\",shop_rate:\"" + xichotel.getShop_rate() + "\"}),(hom:Home{HomeType:\"" + room_detail.getHomeType() + "\",beizhuxinxi:\"" + room_detail.getNoSmaokingMeasure() + "\",bianlisheshi:\"" + room_detail.getConvientFacility() + "\",chuanxing:\"" + room_detail.getBedType() + "\",floor:\"" + room_detail.getFloor() + "\",jianzhumianji:\"" + room_detail.getBuidingArea() + "\",kejiachuang:\"" + room_detail.getIncreaseBed() + "\",yushi:\"" + room_detail.getBedthroom() + "\",hotel_id:\"" + hotel_id + "\"}) merge(sfm)-[:IncludeHomeTypes{name:\"包含的房间类型\"}]->(hom)");
                             for (XieChengHotelRoomInfoListSpecific room_info_list : room_info_lists) {
                                 System.out.println(room_info_list.getSatisfactionDegree());
                                 tx.run("merge(hs:HomeSpecificInfos{chuangxing:\"" + room_info_list.getBedType() + "\",fangjia:\"" + room_info_list.getHomePrice() + "\",hotel_id:\"" + hotel_id + "\",kuangdai:\"" + room_info_list.getInternet() + "\",mayidu:\"" + room_info_list.getSatisfactionDegree() + "\",ruzhurenshu:\"" + room_info_list.getLivePeopleNums() + "\",zaocan:\"" + room_info_list.getBreakfast() + "\",zhengce:\"" + room_info_list.getPolicy() + "\"})");
-                                tx.run("match(hom:Home{HomeType:\"" + room_detail.getHomeType() + "\",beizhuxinxi:\"" + room_detail.getNoSmaokingMeasure() + "\",bianlisheshi:\"" + room_detail.getConvientFacility() + "\",chuanxing:\"" + room_detail.getBedType() + "\",floor:\"" + room_detail.getFloor() + "\",jianzhumianji:\"" + room_detail.getBuidingArea() + "\",kejiachuang:\"" + room_detail.getIncreaseBed() + "\",yushi:\"" + room_detail.getBedthroom() + "\",hotel_id:\""+hotel_id+"\"}),(hsm:HomeSpecificInfos{chuangxing:\"" + room_info_list.getBedType() + "\",fangjia:\"" + room_info_list.getHomePrice() + "\",hotel_id:\"" + hotel_id + "\",kuangdai:\"" + room_info_list.getInternet() + "\",mayidu:\"" + room_info_list.getSatisfactionDegree() + "\",ruzhurenshu:\"" + room_info_list.getLivePeopleNums() + "\",zaocan:\"" + room_info_list.getBreakfast() + "\",zhengce:\"" + room_info_list.getPolicy() + "\"}) merge(hom)-[:HomeSpecficRelationship{name:\"某种房间包含的具体型号信息\"}]->(hsm)");
+                                tx.run("match(hom:Home{HomeType:\"" + room_detail.getHomeType() + "\",beizhuxinxi:\"" + room_detail.getNoSmaokingMeasure() + "\",bianlisheshi:\"" + room_detail.getConvientFacility() + "\",chuanxing:\"" + room_detail.getBedType() + "\",floor:\"" + room_detail.getFloor() + "\",jianzhumianji:\"" + room_detail.getBuidingArea() + "\",kejiachuang:\"" + room_detail.getIncreaseBed() + "\",yushi:\"" + room_detail.getBedthroom() + "\",hotel_id:\"" + hotel_id + "\"}),(hsm:HomeSpecificInfos{chuangxing:\"" + room_info_list.getBedType() + "\",fangjia:\"" + room_info_list.getHomePrice() + "\",hotel_id:\"" + hotel_id + "\",kuangdai:\"" + room_info_list.getInternet() + "\",mayidu:\"" + room_info_list.getSatisfactionDegree() + "\",ruzhurenshu:\"" + room_info_list.getLivePeopleNums() + "\",zaocan:\"" + room_info_list.getBreakfast() + "\",zhengce:\"" + room_info_list.getPolicy() + "\"}) merge(hom)-[:HomeSpecficRelationship{name:\"某种房间包含的具体型号信息\"}]->(hsm)");
                             }
                         }
 
