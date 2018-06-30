@@ -25,4 +25,5 @@ public  abstract  class Neo4jUtils  implements Callable<String>{
         if (this.driver != null)
             this.driver.close();
     }
+
 }

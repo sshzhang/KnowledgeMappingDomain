@@ -23,7 +23,7 @@ public class XieChengSightIntroduce {
     }
 
     public String getFeatures() {
-        return features;
+        return  features.replace("\"", "'");
     }
 
     public void setFeatures(String features) {
@@ -31,7 +31,7 @@ public class XieChengSightIntroduce {
     }
 
     public String getIntroduce() {
-        return introduce;
+        return introduce.replace("\"","'");
     }
 
     public void setIntroduce(String introduce) {

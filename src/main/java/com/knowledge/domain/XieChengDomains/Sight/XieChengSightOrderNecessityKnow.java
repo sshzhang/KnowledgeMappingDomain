@@ -8,16 +8,16 @@ import com.alibaba.fastjson.annotation.JSONField;
 public class XieChengSightOrderNecessityKnow {
 
     @JSONField(name = "安全指南")
-    private String safeGuidence;
+    private String safeGuidence="";
 
     @JSONField(name = "温馨提示")
-    private String careful;
+    private String careful="";
 
     @JSONField(name = "优待政策")
-    private String goodPolicy;
+    private String goodPolicy="";
 
     @JSONField(name = "预订限制")
-    private String orderPolicy;
+    private String orderPolicy="";
 
     public XieChengSightOrderNecessityKnow() {
     }
@@ -30,7 +30,7 @@ public class XieChengSightOrderNecessityKnow {
     }
 
     public String getSafeGuidence() {
-        return safeGuidence;
+        return safeGuidence.replace("[", "").replace("]", "").replace("\"", "");
     }
 
     public void setSafeGuidence(String safeGuidence) {
@@ -38,7 +38,8 @@ public class XieChengSightOrderNecessityKnow {
     }
 
     public String getCareful() {
-        return careful;
+
+        return careful.replace("[", "").replace("]", "").replace("\"", "");
     }
 
     public void setCareful(String careful) {
@@ -46,7 +47,7 @@ public class XieChengSightOrderNecessityKnow {
     }
 
     public String getGoodPolicy() {
-        return goodPolicy;
+        return goodPolicy.replace("[", "").replace("]", "").replace("\"", "");
     }
 
     public void setGoodPolicy(String goodPolicy) {
@@ -54,7 +55,7 @@ public class XieChengSightOrderNecessityKnow {
     }
 
     public String getOrderPolicy() {
-        return orderPolicy;
+        return orderPolicy.replace("[", "").replace("]", "").replace("\"", "");
     }
 
     public void setOrderPolicy(String orderPolicy) {

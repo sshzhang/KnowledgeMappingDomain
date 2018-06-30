@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.knowledge.Utils.ConstructDataTypePackage.MyNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,10 +17,10 @@ public class XieChengSightCombinationTicket {
 
 
     @JSONField(name = "玩乐")
-    private List<XieChengSightSpecificPlay > plays;
+    private List<XieChengSightSpecificPlay > plays=new ArrayList<>();
 
     @JSONField(name = "门票+酒店")
-    private List<XieChengSightSpecificTicketAndHotel> ticketAndHotel;
+    private List<XieChengSightSpecificTicketAndHotel> ticketAndHotel = new ArrayList<>();
 
     @JSONField(name = "门票")
     private JSONObject tickets;

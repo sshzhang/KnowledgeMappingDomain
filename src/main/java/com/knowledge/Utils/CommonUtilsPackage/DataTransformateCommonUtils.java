@@ -1,14 +1,6 @@
 package com.knowledge.Utils.CommonUtilsPackage;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.knowledge.Annotations.FieldMethodAnnotation;
-import com.knowledge.Utils.ConstructDataTypePackage.MyNode;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Projections;
 import org.bson.Document;
 
 import java.lang.reflect.Field;
@@ -21,10 +13,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DataTransformateCommonUtils {
-
-
-    //每次运行完后记得释放 alllistNodes.clear()
-    public  static final  List<List<String>> alllistNodes = new ArrayList<>();
 
 
     /**
@@ -108,107 +96,7 @@ public class DataTransformateCommonUtils {
     }
 
 
-    /**
-     * 查找 携程所有酒店的名称集合
-     * @return
-     */
-    public  static  List<String> getAllXieChengHotelName() {
-
-        List<String> hotels = new ArrayList<>();
-        MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
-        MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
-        MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "携程"), Filters.eq("data_source", "酒店"))).projection(Projections.include("Shope_name")).iterator();
-        while (iterator.hasNext()) {
-            Document document = iterator.next();
-            hotels.add(document.get("Shope_name").toString());
-        }
-        remoteServiceClient.close();
-        return hotels;
-    }
 
 
-
-
-    /**
-     * 递归遍历 买票 结构树
-     *
-     *
-     * 运行完此函数后 记得释放 alllistNodes.clear()
-     *
-     * @param root   树节点
-     */
-    public static void TraversalTheTree(MyNode<String> root) {
-        if (root == null) return;
-        if (root.isIsend()) {
-            System.out.println("***************");
-            //获取 逆序的买票结构
-            alllistNodes.add(CreateTheInverseListAllNodes(root));
-            System.out.println("***************");
-        }
-        List<MyNode> childMyNodes = root.getChildMyNodes();
-        if(childMyNodes!=null)
-            for (MyNode<String> childrenMyNode : childMyNodes) {
-                TraversalTheTree(childrenMyNode);
-            }else{
-
-            TraversalTheTree(null);
-        }
-    }
-
-    //逆序
-    private static List<String> CreateTheInverseListAllNodes(MyNode<String> root) {
-        List<String> listNode = new ArrayList<String>();
-        listNode.add(root.getMyNodeEntity());
-        MyNode<String> parentMyNode = root.getParentMyNode();
-        while (parentMyNode != null) {
-            listNode.add(parentMyNode.getMyNodeEntity());
-            parentMyNode = parentMyNode.getParentMyNode();
-        }
-        return listNode;
-    }
-
-
-
-    /**
-     * 递归构建 买票结构树
-     * @param root
-     * @param object
-     */
-    public   static void CreateTheTree(MyNode root, Object object) {
-
-        if(object==null) {
-            return;
-        }
-        if (object.getClass().isAssignableFrom(JSONArray.class)) {
-
-            JSONArray objects = (JSONArray) object;
-            for (int i = 0; i < objects.size(); i++) {
-                Object o = objects.get(i);
-                CreateTheTree(root, o);
-            }
-
-        } else if (object.getClass().isAssignableFrom(JSONObject.class)) {
-
-            JSONObject obj = (JSONObject) object;
-            String name = obj.get("@name").toString();
-            MyNode newNode = new MyNode<String>(name);
-            root.addChildMyNode(newNode);
-            newNode.setParentMyNode(root);
-            Set<String> strings = obj.keySet();
-            if (strings.contains("content")) {
-                MyNode endNode = new MyNode(obj.get("content"));
-                newNode.addChildMyNode(endNode);
-                endNode.setParentMyNode(newNode);
-                endNode.setIsend(true);
-            } else {
-                CreateTheTree(newNode, obj.get("title"));
-            }
-        }else{
-            throw new RuntimeException("数据格式异常，出现未处理的类型信息"+object.getClass());
-        }
-
-
-
-    }
 
 }
