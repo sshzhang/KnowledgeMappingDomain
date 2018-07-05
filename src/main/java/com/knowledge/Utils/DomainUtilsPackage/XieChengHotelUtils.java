@@ -18,6 +18,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 携程工具类
@@ -59,13 +60,7 @@ public class XieChengHotelUtils {
     private  static void  WriteXieChengStaticDatatToNeo4j() {
         MongoClient localServiceClient = null;
         try{
-//          localServiceClient=
-//                   MongoDBConnectionUtils.getLocalServiceClient();
-//           MongoCollection<Document> collection =
-//                   localServiceClient.getDatabase("hotel").getCollection("xiechenghotel");
-//           MongoCursor<Document> iterator =
-//                   collection.find().iterator();
-
+//
             MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
             MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("shops");
             MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_source", "酒店"), Filters.eq("data_website", "携程"))).iterator();
@@ -105,27 +100,34 @@ public class XieChengHotelUtils {
 
 
 
-    public static void main(String... args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException, NoSuchMethodException, ClassNotFoundException {
+    public static void main(String... args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException, NoSuchMethodException, ClassNotFoundException, InterruptedException {
 
 
         WriteXieChengStaticDatatToNeo4j();
-//        MongoClient localServiceClient = MongoDBConnectionUtils.getLocalServiceClient();
-//        MongoCollection<Document> collection = localServiceClient.getDatabase("hotel").getCollection("xiechenghotelcomment");
-//        MongoCursor<Document> iterator = collection.find().noCursorTimeout(true).iterator();
-
         MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
         MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
-        MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "携程"), Filters.eq("data_source", "酒店"))).iterator();
+        MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "携程"), Filters.eq("data_source", "酒店"))).noCursorTimeout(true).iterator();
+        int i = 0;
         while (iterator.hasNext()) {
             Document document = iterator.next();
             XieChengHotelComments xieChengHotelComments = (XieChengHotelComments) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotelComments", document);
             System.out.println("------------------------------");
             System.out.println(xieChengHotelComments.getComment_user_name()+"  "+xieChengHotelComments.getComment_user_check_in());
             System.out.println("------------------------------");
-            executorService.submit(new XieChengHotelNeo4jUtils(xieChengHotelComments));
+            executorService.execute(new XieChengHotelNeo4jUtils(xieChengHotelComments));
             //neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
+            System.out.println("------------"+(++i)+"---------------");
         }
-        executorService.shutdown();
-        remoteServiceClient.close();
+        try {
+            executorService.shutdown();
+            if (!executorService.awaitTermination(20, TimeUnit.MINUTES)) {
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+            executorService.shutdownNow();
+        }finally {
+            remoteServiceClient.close();
+        }
     }
 }

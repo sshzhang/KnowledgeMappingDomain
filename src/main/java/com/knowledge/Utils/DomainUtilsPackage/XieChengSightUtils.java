@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class XieChengSightUtils {
 
@@ -184,18 +185,30 @@ public class XieChengSightUtils {
     }
 
 
-    public static void main(String... args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException, NoSuchMethodException, ClassNotFoundException{
+    public static void main(String... args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException, NoSuchMethodException, ClassNotFoundException, InterruptedException {
 
         WirteTheXieChengSightToNeo4j();
         MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
         MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
         MongoCursor<Document> iterator =
-                collection.find(Filters.and(Filters.eq("data_source", "景点"), Filters.eq("data_website", "携程"))).iterator();
+                collection.find(Filters.and(Filters.eq("data_source", "景点"), Filters.eq("data_website", "携程"))).noCursorTimeout(true).iterator();
+        int count = 0;
         while (iterator.hasNext()) {
             Document document = iterator.next();
             XieChengSightComments sightComments = (XieChengSightComments) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.XieChengDomains.Sight.XieChengSightComments", document);
-            executorService.submit(new XieChengSightNeo4jUitls(sightComments));
+            System.out.println(sightComments);
+            executorService.execute(new XieChengSightNeo4jUitls(sightComments));
+            System.out.println("------------end---" + ++count + "-----------");
         }
+        System.out.println("------------end1---" + count + "-----------");
+        System.out.println("以及调用shutdown");
+        executorService.shutdown();
+        System.out.println("以及调用shutdown");
+        //所有任务都结束的时候，返回true
+        if (!executorService.awaitTermination(50, TimeUnit.MINUTES)) {
+            executorService.shutdownNow();
+        }
+        System.out.println("关闭");
         remoteServiceClient.close();
     }
 }

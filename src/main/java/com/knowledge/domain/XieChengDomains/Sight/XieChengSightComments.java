@@ -65,7 +65,8 @@ public class XieChengSightComments {
     }
 
     public String getComment_content() {
-        return comment_content;
+
+        return comment_content.replace("\"", "'");
     }
 
     public void setComment_content(String comment_content) {

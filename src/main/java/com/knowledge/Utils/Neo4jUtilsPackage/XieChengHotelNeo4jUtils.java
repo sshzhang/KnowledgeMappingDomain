@@ -2,7 +2,7 @@ package com.knowledge.Utils.Neo4jUtilsPackage;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.knowledge.Annotations.FieldMethodAnnotation;
-import com.knowledge.Utils.Neo4jUtilsPackage.Neo4jUtils;
+import com.knowledge.Utils.CommonUtilsPackage.LogsUtils;
 import com.knowledge.domain.XieChengDomains.*;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
@@ -228,6 +228,7 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils {
                     try {
                         StatementResult run = tx.run("match(sn:XCHotel{Shope_name:\"" + shop_name + "\",data_website:\"携程\"}) return sn.hotel_id as hotel_id");
                         System.out.println(shop_name);
+                        if(!run.hasNext()) return null;
                         String hotel_id = run.single().get("hotel_id").asString();
                         System.out.println(hotel_id);
                         tx.run("merge(smn:Comments{comment_content:\"" + comment_content + "\",data_website:\"" + xieChengHotelComments.getData_website() + "\",comment_time:\"" + comment_time + "\",comment_score_text:\"" + comment_score_text + "\",comment_type:\"" + comment_type + "\",comment_score:" + comment_score + ",comment_user_name:\"" + xieChengHotelComments.getComment_user_name() + "\",comment_user_check_in:\"" + xieChengHotelComments.getComment_user_check_in() + "\",data_source:\"" + xieChengHotelComments.getData_source() + "\",shop_name:\"" + shop_name + "\"})");
@@ -235,16 +236,18 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils {
                         System.out.println("match(smtn:Comments{comment_content:\"" + comment_content + "\",data_website:\"" + xieChengHotelComments.getData_website() + "\",comment_time:\"" + comment_time + "\",comment_score_text:\"" + comment_score_text + "\",comment_type:\"" + comment_type + "\",comment_score:" + comment_score + ",comment_user_name:\"" + xieChengHotelComments.getComment_user_name() + "\",comment_user_check_in:\"" + xieChengHotelComments.getComment_user_check_in() + "\",data_source:\"" + xieChengHotelComments.getData_source() + "\",shop_name:\"" + shop_name + "\"}),(sfo:Home{hotel_id:\"" + hotel_id + "\",HomeType:\"" + comment_user_room + "\"}) merge(sfo)-[:IncludeComments{name:\"某种房型包含的评论\"}]->(smtn)");
                         System.out.println();
                     } catch (Exception ex) {
-                        throw new RuntimeException(shop_name);
+                        throw new RuntimeException(shop_name+"  "+ex.getMessage());
                     }
                     return null;
                 }
             });
         } catch (Exception ex) {
+            LogsUtils.WriteTheDataToFile(ex.getMessage(), "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/error.txt");
             ex.printStackTrace();
         } finally {
             try {
                 close();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -256,5 +259,11 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils {
     public String call() throws Exception {
         this.CreateXieChengCommentDataToNeo4jNode(this.xieChengHotelComments);
         return null;
+    }
+
+    @Override
+    public void run() {
+        super.run();
+        this.CreateXieChengCommentDataToNeo4jNode(this.xieChengHotelComments);
     }
 }

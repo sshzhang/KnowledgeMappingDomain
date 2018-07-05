@@ -9,7 +9,7 @@ import java.util.concurrent.Callable;
 /**
  * Neo4j工具类
  */
-public  abstract  class Neo4jUtils  implements Callable<String>{
+public  abstract  class Neo4jUtils  extends Thread implements Callable<String>{
 
 
     protected final Driver driver;

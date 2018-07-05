@@ -4,16 +4,18 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.knowledge.Utils.CommonUtilsPackage.DataTransformateCommonUtils;
 import com.knowledge.Utils.ConstructDataTypePackage.MyNode;
+import com.knowledge.Utils.DomainUtilsPackage.XieChengSightUtils;
 import com.knowledge.domain.XieChengDomains.Sight.*;
 import org.neo4j.driver.v1.*;
 
 import java.lang.reflect.Type;
 import java.util.List;
 
+
 public class XieChengSightNeo4jUitls extends Neo4jUtils {
 
 
-    private static final List<String> allXieChengHotelsName = DataTransformateCommonUtils.getAllXieChengHotelName();
+    private static final List<String> allXieChengHotelsName = XieChengSightUtils.getAllXieChengHotelName();
     private XieChengSightComments sightComments;
 
     public XieChengSightNeo4jUitls(XieChengSightComments sightComments) {
@@ -22,16 +24,20 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
     }
 
 
+    @Override
+    public void run() {//测试方法 目前还为准备使用
+        super.run();
+        this.CreateXieChengSightCommentsToNeo4jNode(this.sightComments);
+    }
 
     @Override
-    public String call() throws Exception {
+    public String call() {
         this.CreateXieChengSightCommentsToNeo4jNode(this.sightComments);
         return null;
     }
 
     private void CreateXieChengSightCommentsToNeo4jNode(XieChengSightComments sightComments) {
 
-        Session session = this.driver.session();
         String id = sightComments.get_id();
         final String comment_content = sightComments.getComment_content();
         final float comment_score = sightComments.getComment_score();
@@ -42,16 +48,33 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
         final String data_source = sightComments.getData_source();
         final String data_website = sightComments.getData_website();
         final String shop_name = sightComments.getShop_name();
-        session.writeTransaction(new TransactionWork<Object>() {
+        Session session = this.driver.session();
+        try {
 
-            @Override
-            public Object execute(Transaction transaction) {
-                //创建评论节点
-                transaction.run("merge(sf:Comments{comment_user_name:\"" + comment_user_name + "\",comment_time:\"" + comment_time + "\",comment_content:\"" + comment_content + "\",data_region:\"" + data_region + "\",data_website:\"" + data_website + "\",data_source:\"" + data_source + "\",comment_score:" + comment_score + ",shop_name:\"" + shop_name + "\"})");
-                transaction.run("match(sf:Comments{comment_user_name:\"" + comment_user_name + "\",comment_time:\"" + comment_time + "\",comment_content:\"" + comment_content + "\",data_region:\"" + data_region + "\",data_website:\"" + data_website + "\",data_source:\"" + data_source + "\",comment_score:" + comment_score + ",shop_name:\"" + shop_name + "\"}),(sm:Sight{shop_name:\"" + shop_name + "\"}) merge(sm)-[:SightRelationIncludeComments:{name:\"景点包含的评论\"}]->(sf)");
-                return null;
+            session.writeTransaction(new TransactionWork<Object>() {
+                @Override
+                public Object execute(Transaction transaction) {
+                    System.out.println("-----------------------------------------------");
+                    System.out.println(shop_name);
+                    System.out.println("merge(sf:Comments{comment_user_name:\"" + comment_user_name + "\",comment_time:\"" + comment_time + "\",comment_content:\"" + comment_content + "\",data_region:\"" + data_region + "\",data_website:\"" + data_website + "\",data_source:\"" + data_source + "\",comment_score:" + comment_score + ",shop_name:\"" + shop_name + "\"})");
+                    //创建评论节点
+                    transaction.run("merge(sf:Comments{comment_user_name:\"" + comment_user_name + "\",comment_time:\"" + comment_time + "\",comment_content:\"" + comment_content + "\",data_region:\"" + data_region + "\",data_website:\"" + data_website + "\",data_source:\"" + data_source + "\",comment_score:" + comment_score + ",shop_name:\"" + shop_name + "\"})");
+                    transaction.run("match(sf:Comments{comment_user_name:\"" + comment_user_name + "\",comment_time:\"" + comment_time + "\",comment_content:\"" + comment_content + "\",data_region:\"" + data_region + "\",data_website:\"" + data_website + "\",data_source:\"" + data_source + "\",comment_score:" + comment_score + ",shop_name:\"" + shop_name + "\"}),(sm:Sight{shop_name:\"" + shop_name + "\"}) merge(sm)-[:SightRelationIncludeComments{name:\"景点包含的评论\"}]->(sf)");
+                    System.out.println("-----------------------------------------------");
+                    return null;
+                }
+            });
+
+        } catch (Exception ex) {
+            Thread.currentThread().interrupt();
+            ex.printStackTrace();
+        } finally {
+            try {
+                close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        });
+        }
     }
 
     /**
@@ -65,9 +88,6 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
 
         XieChengSightIntroduce introducecom =
                 xieChengSightCombinationInfos.getIntroduce();
-
-
-
 
          //交通信息状况
         String transportGuidence = xieChengSightCombinationInfos.getTransportGuidence();
@@ -191,8 +211,8 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
                     }
 
                     //门票数据的写入
-                    DataTransformateCommonUtils.TraversalTheTree(root);
-                    List<List<String>> alllistNodes = DataTransformateCommonUtils.alllistNodes;
+                    XieChengSightUtils. TraversalTheTree(root);
+                    List<List<String>> alllistNodes = XieChengSightUtils.alllistNodes;
                     for (List<String> alllistNode : alllistNodes) {
                         //alllistNode.size() - 1元素为门票
                         //大标题
