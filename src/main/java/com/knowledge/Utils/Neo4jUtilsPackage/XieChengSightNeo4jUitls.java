@@ -6,37 +6,33 @@ import com.knowledge.Utils.CommonUtilsPackage.DataTransformateCommonUtils;
 import com.knowledge.Utils.ConstructDataTypePackage.MyNode;
 import com.knowledge.Utils.DomainUtilsPackage.XieChengSightUtils;
 import com.knowledge.domain.XieChengDomains.Sight.*;
+import com.knowledge.domain.XieChengSightApplicationDomain;
 import org.neo4j.driver.v1.*;
 
 import java.lang.reflect.Type;
 import java.util.List;
 
 
-public class XieChengSightNeo4jUitls extends Neo4jUtils {
+public class XieChengSightNeo4jUitls extends Neo4jUtils<XieChengSightComments,XieChengSightApplicationDomain> {
 
 
     private static final List<String> allXieChengHotelsName = XieChengSightUtils.getAllXieChengHotelName();
-    private XieChengSightComments sightComments;
 
-    public XieChengSightNeo4jUitls(XieChengSightComments sightComments) {
-        super();
-        this.sightComments = sightComments;
+    public XieChengSightNeo4jUitls(XieChengSightComments sightComments,XieChengSightApplicationDomain xieChengSightApplicationDomain,int status) {
+        super(sightComments,xieChengSightApplicationDomain,status);
     }
-
-
     @Override
-    public void run() {//测试方法 目前还为准备使用
-        super.run();
-        this.CreateXieChengSightCommentsToNeo4jNode(this.sightComments);
+    protected boolean  CreateApplicationCommentDataToNeo4jNode(XieChengSightComments CommentT) {
+        return  CreateXieChengSightCommentsToNeo4jNode(CommentT);
     }
 
     @Override
-    public String call() {
-        this.CreateXieChengSightCommentsToNeo4jNode(this.sightComments);
-        return null;
+    protected boolean  CreateApplicationStaticContentDataToNeo4jNode(XieChengSightApplicationDomain allStaticContent) {
+        return  CreateXieChengSightDataToNeo4jNode(allStaticContent.getXieChengSightDomain(), allStaticContent.getXieChengSightCombinationInfos(), allStaticContent.getXieChengSightCombinationTicket());
     }
 
-    private void CreateXieChengSightCommentsToNeo4jNode(XieChengSightComments sightComments) {
+
+    private boolean CreateXieChengSightCommentsToNeo4jNode(XieChengSightComments sightComments) {
 
         String id = sightComments.get_id();
         final String comment_content = sightComments.getComment_content();
@@ -61,13 +57,14 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
                     transaction.run("merge(sf:Comments{comment_user_name:\"" + comment_user_name + "\",comment_time:\"" + comment_time + "\",comment_content:\"" + comment_content + "\",data_region:\"" + data_region + "\",data_website:\"" + data_website + "\",data_source:\"" + data_source + "\",comment_score:" + comment_score + ",shop_name:\"" + shop_name + "\"})");
                     transaction.run("match(sf:Comments{comment_user_name:\"" + comment_user_name + "\",comment_time:\"" + comment_time + "\",comment_content:\"" + comment_content + "\",data_region:\"" + data_region + "\",data_website:\"" + data_website + "\",data_source:\"" + data_source + "\",comment_score:" + comment_score + ",shop_name:\"" + shop_name + "\"}),(sm:Sight{shop_name:\"" + shop_name + "\"}) merge(sm)-[:SightRelationIncludeComments{name:\"景点包含的评论\"}]->(sf)");
                     System.out.println("-----------------------------------------------");
-                    return null;
+                    return true;
                 }
             });
 
         } catch (Exception ex) {
             Thread.currentThread().interrupt();
             ex.printStackTrace();
+            return false;
         } finally {
             try {
                 close();
@@ -75,8 +72,8 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
                 e.printStackTrace();
             }
         }
+        return true;
     }
-
     /**
      * 把景点静态数据写入到图数据库
      *
@@ -84,7 +81,7 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
      * @param xieChengSightCombinationInfos  表示携程景点介绍数据的组合类型
      * @param xieChengSightCombinationTicket 表示 携程景点 相应的 买票 和优惠套餐价格组合
      */
-    public void CreateXieChengSightDataToNeo4jNode(final XieChengSightDomain xieChengSightDomain, final XieChengSightCombinationInfos xieChengSightCombinationInfos, final XieChengSightCombinationTicket xieChengSightCombinationTicket) {
+    public boolean CreateXieChengSightDataToNeo4jNode(final XieChengSightDomain xieChengSightDomain, final XieChengSightCombinationInfos xieChengSightCombinationInfos, final XieChengSightCombinationTicket xieChengSightCombinationTicket) {
 
         XieChengSightIntroduce introducecom =
                 xieChengSightCombinationInfos.getIntroduce();
@@ -286,12 +283,13 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils {
                 String orderPolicy = necessityKnow.getOrderPolicy();
                 transaction.run("merge(nkno:OrderNecessityKnow{treatBetterPolicy:\"" + goodPolicy + "\",orderConstraint:\"" + orderPolicy + "\",warmReminder:\"" + careful + "\",safeGuidence:\"" + safeGuidence + "\"})");
                 transaction.run("match(nkno:OrderNecessityKnow{treatBetterPolicy:\"" + goodPolicy + "\",orderConstraint:\"" + orderPolicy + "\",warmReminder:\"" + careful + "\",safeGuidence:\"" + safeGuidence + "\"}),(sfh:Sight{shop_name:\"" + shop_name + "\"}) merge (sfh)-[:SightRelationIncludeOrderNecessityKnow{name:\"景点包含的预定须知\"}]->(nkno)");
-                return null;
+                return true;
             }
 
         });
 
 
+        return true;
 
     }
 }

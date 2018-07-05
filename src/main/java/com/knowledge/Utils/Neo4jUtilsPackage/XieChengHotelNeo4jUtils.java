@@ -4,6 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.knowledge.Annotations.FieldMethodAnnotation;
 import com.knowledge.Utils.CommonUtilsPackage.LogsUtils;
 import com.knowledge.domain.XieChengDomains.*;
+import com.knowledge.domain.XieChengHotelApplicationDomain;
 import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
 import org.neo4j.driver.v1.Transaction;
@@ -15,17 +16,25 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class XieChengHotelNeo4jUtils extends Neo4jUtils {
+public class XieChengHotelNeo4jUtils extends Neo4jUtils<XieChengHotelComments,XieChengHotelApplicationDomain> {
 
-    private XieChengHotelComments xieChengHotelComments;
 
-    public XieChengHotelNeo4jUtils(XieChengHotelComments xieChengHotelComments) {
-        super();
-        this.xieChengHotelComments = xieChengHotelComments;
+    public XieChengHotelNeo4jUtils(XieChengHotelComments xieChengHotelComments,XieChengHotelApplicationDomain xieChengHotelApplicationDomain,int status) {
+        super(xieChengHotelComments,xieChengHotelApplicationDomain,status);
+    }
+
+    @Override
+    protected boolean CreateApplicationStaticContentDataToNeo4jNode(XieChengHotelApplicationDomain allStaticContent) {
+       return  CreateXieChengDataToNeo4jNode(allStaticContent.getXieChengHotel(),allStaticContent.getXieChengAroundFacility(),allStaticContent.getXieChengShopStatistics(),allStaticContent.getXieChengHotelAllRooms(),allStaticContent.getCombinationHotelIntro());
+    }
+
+    @Override
+    protected boolean CreateApplicationCommentDataToNeo4jNode(XieChengHotelComments CommentT) {
+       return  CreateXieChengCommentDataToNeo4jNode(CommentT);
     }
 
 
-    public void CreateXieChengDataToNeo4jNode(final XieChengHotel xichotel, final XieChengAroundFacility aroundFacility, final XieChengShopStatistics statistics, final XieChengHotelAllRooms xieRooms, final XieChengCombinationHotelIntro combinationHotelIntro) {
+    public boolean CreateXieChengDataToNeo4jNode(final XieChengHotel xichotel, final XieChengAroundFacility aroundFacility, final XieChengShopStatistics statistics, final XieChengHotelAllRooms xieRooms, final XieChengCombinationHotelIntro combinationHotelIntro) {
 
 
         try {
@@ -186,12 +195,11 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils {
                         }
 
 
-                        return null;
+                        return true;
                     } catch (Exception ex) {
                         ex.printStackTrace();
-                        System.exit(0);
+                        return false;
                     }
-                    return null;
                 }
             });
 
@@ -205,10 +213,10 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils {
                 e.printStackTrace();
             }
         }
+        return true;
     }
 
-
-    private void CreateXieChengCommentDataToNeo4jNode(final XieChengHotelComments xieChengHotelComments) {
+    private boolean CreateXieChengCommentDataToNeo4jNode(final XieChengHotelComments xieChengHotelComments) {
 
         try {
             final String comment_content = xieChengHotelComments.getComment_content();
@@ -238,12 +246,13 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils {
                     } catch (Exception ex) {
                         throw new RuntimeException(shop_name+"  "+ex.getMessage());
                     }
-                    return null;
+                    return true;
                 }
             });
         } catch (Exception ex) {
             LogsUtils.WriteTheDataToFile(ex.getMessage(), "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/error.txt");
             ex.printStackTrace();
+            return false;
         } finally {
             try {
                 close();
@@ -252,18 +261,7 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils {
                 e.printStackTrace();
             }
         }
+        return true;
 
-    }
-
-    @Override
-    public String call() throws Exception {
-        this.CreateXieChengCommentDataToNeo4jNode(this.xieChengHotelComments);
-        return null;
-    }
-
-    @Override
-    public void run() {
-        super.run();
-        this.CreateXieChengCommentDataToNeo4jNode(this.xieChengHotelComments);
     }
 }

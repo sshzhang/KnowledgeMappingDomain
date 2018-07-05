@@ -7,6 +7,7 @@ import com.knowledge.Utils.CommonUtilsPackage.DataTransformateCommonUtils;
 import com.knowledge.Utils.CommonUtilsPackage.MongoDBConnectionUtils;
 import com.knowledge.Utils.Neo4jUtilsPackage.XieChengHotelNeo4jUtils;
 import com.knowledge.domain.XieChengDomains.*;
+import com.knowledge.domain.XieChengHotelApplicationDomain;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -25,8 +26,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class XieChengHotelUtils {
 
-    private static final  ExecutorService executorService = Executors.newFixedThreadPool(10);
-
+    private static   ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     /**
      *   目前只用于 携程XieChengHotel.shop_intro数据转化 domain  XieChengCombinationHotelIntro
@@ -58,10 +58,10 @@ public class XieChengHotelUtils {
     //把携程酒店静态数据写入到图数据库
 
     private  static void  WriteXieChengStaticDatatToNeo4j() {
-        MongoClient localServiceClient = null;
+        MongoClient remoteServiceClient = null;
         try{
 //
-            MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
+             remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
             MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("shops");
             MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_source", "酒店"), Filters.eq("data_website", "携程"))).iterator();
             while (iterator.hasNext()) {
@@ -87,14 +87,27 @@ public class XieChengHotelUtils {
                System.out.println(xichotel.getShop_room_recommend_all());
                XieChengHotelAllRooms xieRooms = JSON.parseObject(xichotel.getShop_room_recommend_all(), XieChengHotelAllRooms.class);
                System.out.println(xieRooms);
-                XieChengHotelNeo4jUtils neo4jUtils = new XieChengHotelNeo4jUtils(null);
-               neo4jUtils.CreateXieChengDataToNeo4jNode(xichotel,AroundFacility, statistics, xieRooms,combinationHotelIntro);
+                //XieChengHotelNeo4jUtils neo4jUtils = new XieChengHotelNeo4jUtils(null);
+               //neo4jUtils.CreateXieChengDataToNeo4jNode(xichotel,AroundFacility, statistics, xieRooms,combinationHotelIntro);
+                executorService.submit(new XieChengHotelNeo4jUtils(null, new XieChengHotelApplicationDomain(xichotel, AroundFacility, statistics, xieRooms, combinationHotelIntro), 1));
+
+
            }
        }catch (Exception ex){
             ex.printStackTrace();
        }finally {
-           if(localServiceClient!=null)
-            localServiceClient.close();
+            executorService.shutdown();
+            try {
+                if(!executorService.awaitTermination(10, TimeUnit.MINUTES))
+                    executorService.shutdown();
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                executorService.shutdown();
+            }
+
+            if(remoteServiceClient!=null)
+               remoteServiceClient.close();
         }
     }
 
@@ -108,14 +121,14 @@ public class XieChengHotelUtils {
         MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
         MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "携程"), Filters.eq("data_source", "酒店"))).noCursorTimeout(true).iterator();
         int i = 0;
+        executorService = Executors.newFixedThreadPool(10);
         while (iterator.hasNext()) {
             Document document = iterator.next();
             XieChengHotelComments xieChengHotelComments = (XieChengHotelComments) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.XieChengDomains.XieChengHotelComments", document);
             System.out.println("------------------------------");
             System.out.println(xieChengHotelComments.getComment_user_name()+"  "+xieChengHotelComments.getComment_user_check_in());
             System.out.println("------------------------------");
-            executorService.execute(new XieChengHotelNeo4jUtils(xieChengHotelComments));
-            //neo4jUtils.CreateXieChengCommentDataToNeo4jNode(xieChengHotelComments);
+            executorService.submit(new XieChengHotelNeo4jUtils(xieChengHotelComments, null, 0));
             System.out.println("------------"+(++i)+"---------------");
         }
         try {

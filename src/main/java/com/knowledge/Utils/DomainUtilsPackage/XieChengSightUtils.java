@@ -11,6 +11,7 @@ import com.knowledge.domain.XieChengDomains.Sight.XieChengSightCombinationInfos;
 import com.knowledge.domain.XieChengDomains.Sight.XieChengSightCombinationTicket;
 import com.knowledge.domain.XieChengDomains.Sight.XieChengSightComments;
 import com.knowledge.domain.XieChengDomains.Sight.XieChengSightDomain;
+import com.knowledge.domain.XieChengSightApplicationDomain;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -28,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 
 public class XieChengSightUtils {
 
-    private static final ExecutorService executorService = Executors.newFixedThreadPool(10);
+    private static  ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     //每次运行完后记得释放 alllistNodes.clear()  每次迭代的树的遍历值
     public  static final  List<List<String>> alllistNodes = new ArrayList<>();
@@ -176,10 +177,19 @@ public class XieChengSightUtils {
                     TraversalTheTree(root);
 
                 }
-                XieChengSightNeo4jUitls neo4jUtils = new XieChengSightNeo4jUitls(null);
-                neo4jUtils.CreateXieChengSightDataToNeo4jNode(xieChengSightDomain, xieChengSightCombinationInfos, xieChengSightCombinationTicket);
+                //XieChengSightNeo4jUitls neo4jUtils = new XieChengSightNeo4jUitls(null);
+                //neo4jUtils.CreateXieChengSightDataToNeo4jNode(xieChengSightDomain, xieChengSightCombinationInfos, xieChengSightCombinationTicket);
+                executorService.submit(new XieChengSightNeo4jUitls(null, new XieChengSightApplicationDomain(xieChengSightDomain, xieChengSightCombinationInfos, xieChengSightCombinationTicket), 1));
                 //清除之前数据
                alllistNodes.clear();
+            }
+            executorService.shutdown();
+            try {
+                if(!executorService.awaitTermination(20, TimeUnit.MINUTES))
+                    executorService.shutdownNow();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                executorService.shutdownNow();
             }
             remoteServiceClient.close();
     }
@@ -193,11 +203,12 @@ public class XieChengSightUtils {
         MongoCursor<Document> iterator =
                 collection.find(Filters.and(Filters.eq("data_source", "景点"), Filters.eq("data_website", "携程"))).noCursorTimeout(true).iterator();
         int count = 0;
+        executorService = Executors.newFixedThreadPool(10);
         while (iterator.hasNext()) {
             Document document = iterator.next();
             XieChengSightComments sightComments = (XieChengSightComments) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.XieChengDomains.Sight.XieChengSightComments", document);
             System.out.println(sightComments);
-            executorService.execute(new XieChengSightNeo4jUitls(sightComments));
+            executorService.submit(new XieChengSightNeo4jUitls(sightComments, null, 0));
             System.out.println("------------end---" + ++count + "-----------");
         }
         System.out.println("------------end1---" + count + "-----------");
