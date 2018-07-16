@@ -38,12 +38,14 @@ public class DataTransformateCommonUtils {
             String methodName = annotation.MethodName();
             Class<?> classType = annotation.ParameterType();
             Method method = aClass.getMethod(methodName, classType);
+            //处理为null的特殊情况
+            Object value = document.get(strKey);
             if (String.class.isAssignableFrom(classType)) {
-                method.invoke(dest, document.get(strKey).toString());
+                method.invoke(dest, value == null ? "" : value.toString());
             } else if (int.class.isAssignableFrom(classType)) {
-                method.invoke(dest, Integer.parseInt(document.get(strKey).toString()));
+                method.invoke(dest, Integer.parseInt(value == null ? "0" : value.toString()));
             } else if (float.class.isAssignableFrom(classType)) {
-                method.invoke(dest, Float.parseFloat(document.get(strKey).toString()));
+                method.invoke(dest, Float.parseFloat(value == null ? "0.0" : value.toString()));
             }
         }
         return dest;
@@ -94,9 +96,4 @@ public class DataTransformateCommonUtils {
                 compile.matcher(str);
         return matcher.find() ? matcher.group() : "";
     }
-
-
-
-
-
 }

@@ -8,9 +8,9 @@ import java.util.List;
 public class MongoDBConnectionUtils {
     private static MongoClient localServiceClient ;
     private static MongoClient remoteServideClient;
-    private static MongoClient remoteConnection(String host) {
+    private static MongoClient remoteConnection(String host,int port) {
         try {
-            ServerAddress serverAddress = new ServerAddress(host, 27017);
+            ServerAddress serverAddress = new ServerAddress(host, port);
             List<ServerAddress> serverAddresses = new ArrayList<ServerAddress>();
             serverAddresses.add(serverAddress);
             //三个参数 用户名 数据库名称 密码
@@ -23,12 +23,12 @@ public class MongoDBConnectionUtils {
     }
 
     public static MongoClient getLocalServiceClient() {
-            localServiceClient = remoteConnection("192.168.199.202");
+            localServiceClient = remoteConnection("192.168.199.202",27017);
         return localServiceClient;
     }
 
     public static MongoClient getRemoteServiceClient() {
-            remoteServideClient = remoteConnection("10.1.17.15");
+            remoteServideClient = remoteConnection("10.1.17.15",27017);
         return remoteServideClient;
     }
 }

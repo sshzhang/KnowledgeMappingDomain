@@ -13,7 +13,7 @@ public  abstract  class Neo4jUtils<T,F>   implements Callable<Boolean>{
 
 
     protected final Driver driver;
-    protected static final String uri = "bolt://localhost:7687";
+    protected static final String uri = "bolt://192.168.199.202:7687";
     protected  static final String user="neo4j";
     protected  static final String password = "09120912";
     // 0 表示评论数据的迭代   1表示 静态数据的迭代

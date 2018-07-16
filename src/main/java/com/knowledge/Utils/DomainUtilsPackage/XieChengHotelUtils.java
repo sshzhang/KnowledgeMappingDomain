@@ -91,7 +91,6 @@ public class XieChengHotelUtils {
                //neo4jUtils.CreateXieChengDataToNeo4jNode(xichotel,AroundFacility, statistics, xieRooms,combinationHotelIntro);
                 executorService.submit(new XieChengHotelNeo4jUtils(null, new XieChengHotelApplicationDomain(xichotel, AroundFacility, statistics, xieRooms, combinationHotelIntro), 1));
 
-
            }
        }catch (Exception ex){
             ex.printStackTrace();
@@ -114,7 +113,6 @@ public class XieChengHotelUtils {
 
 
     public static void main(String... args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException, NoSuchMethodException, ClassNotFoundException, InterruptedException {
-
 
         WriteXieChengStaticDatatToNeo4j();
         MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();

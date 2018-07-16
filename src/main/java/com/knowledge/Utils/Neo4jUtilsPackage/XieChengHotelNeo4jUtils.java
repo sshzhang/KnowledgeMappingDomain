@@ -40,7 +40,7 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils<XieChengHotelComments,Xi
         try {
 
             Session session =
-                    driver.session();
+                    super.driver.session();
             final String hotel_id = xichotel.get_id();
             final List<XieChengHotelRoom_detail> all_rooms = xieRooms.getAll_room();
 
