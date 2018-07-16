@@ -204,7 +204,8 @@ public class CateringDomain {
     }
 
     public String getSubtype_name() {
-        return subtype_name;
+
+        return subtype_name.replace("/", "");
     }
 
     public void setSubtype_name(String subtype_name) {
