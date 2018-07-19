@@ -158,7 +158,6 @@ public class CateringDomain {
     public String getShop_recommend_dish() {
         return shop_recommend_dish;
     }
-
     public void setShop_recommend_dish(String shop_recommend_dish) {
         this.shop_recommend_dish = shop_recommend_dish;
     }

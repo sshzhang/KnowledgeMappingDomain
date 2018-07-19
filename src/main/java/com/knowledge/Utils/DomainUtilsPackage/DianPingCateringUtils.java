@@ -35,6 +35,36 @@ public class DianPingCateringUtils {
 
     public static void main(String... args) {
 
+        //CreateCateringStaticContent();
+
+        MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
+        MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
+        MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "大众点评"), Filters.eq("data_source", "餐饮"))).noCursorTimeout(true).iterator();
+        while (iterator.hasNext()) {
+            try {
+                Document document = iterator.next();
+                CateringCommentDomain dest = (CateringCommentDomain) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.dazhongdianpingDomains.dianpingcatering.CateringCommentDomain", document);
+                System.out.println(dest);
+                executorService.submit(new DianpingCateringNeo4jUtils(dest, null, 0));
+                System.out.println("------------------------");
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        executorService.shutdown();
+        try {
+            if (!executorService.awaitTermination(10, TimeUnit.MINUTES)) {
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }finally {
+            remoteServiceClient.close();
+        }
+
+    }
+
+    private static void CreateCateringStaticContent() {
         MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
         MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("shops");
         MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_source", "餐饮"), Filters.eq("data_website", "大众点评"))).iterator();
@@ -221,6 +251,17 @@ public class DianPingCateringUtils {
             dianpingPriceOrEnvironmentDomains.add((DianpingPriceOrEnvironmentDomain) dest);
         }
         return dianpingPriceOrEnvironmentDomains;
+    }
+
+
+    public static Map<String, String> getCateringCommentsRateTag(String comment_rate_tag) {
+        Map<String, String> stringStringHashMap = new HashMap<>();
+        Pattern compile = Pattern.compile("(\"(?<name>.+?)：(?<value>.+?)\")+?");
+        Matcher matcher = compile.matcher(comment_rate_tag);
+        while (matcher.find()) {
+            stringStringHashMap.put(matcher.group("name"), matcher.group("value"));
+        }
+        return stringStringHashMap;
     }
 
 }

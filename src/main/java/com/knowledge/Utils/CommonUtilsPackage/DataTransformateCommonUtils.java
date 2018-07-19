@@ -46,6 +46,8 @@ public class DataTransformateCommonUtils {
                 method.invoke(dest, Integer.parseInt(value == null ? "0" : value.toString()));
             } else if (float.class.isAssignableFrom(classType)) {
                 method.invoke(dest, Float.parseFloat(value == null ? "0.0" : value.toString()));
+            } else if (ArrayList.class.isAssignableFrom(classType)) {
+                method.invoke(dest, value);
             }
         }
         return dest;
