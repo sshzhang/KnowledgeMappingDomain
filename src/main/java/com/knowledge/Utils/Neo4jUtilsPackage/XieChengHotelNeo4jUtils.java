@@ -256,7 +256,6 @@ public class XieChengHotelNeo4jUtils extends Neo4jUtils<XieChengHotelComments,Xi
         } finally {
             try {
                 close();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -10,7 +10,7 @@ import java.io.IOException;
 public class LogsUtils {
 
 
-    public static boolean WriteTheDataToFile(String messgae, String filepath){
+    public synchronized  static boolean WriteTheDataToFile(String messgae, String filepath){
 
         FileOutputStream fileOutputStream = null;
         try {
@@ -23,7 +23,6 @@ public class LogsUtils {
             fileOutputStream.write(bytes);
             fileOutputStream.write("\n".getBytes());
         } catch (Exception ex) {
-
             return false;
         }finally {
             try {

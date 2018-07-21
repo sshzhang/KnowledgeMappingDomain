@@ -25,16 +25,43 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
         final String data_website = CommentT.getData_website();
         final List<String> comment_pic_list = CommentT.getComment_pic_list();
         final String comment_rate_tag = CommentT.getComment_rate_tag();
-        Session session = super.driver.session();
-        session.writeTransaction(new TransactionWork<Object>() {
-            @Override
-            public Object execute(Transaction transaction) {
+        Session session = this.driver.session();
+        Transaction transaction = null;
 
-                StatementResult run = transaction.run("merge(sc:Comments{comment_user_rate:\"" + CommentT.getComment_user_rate() + "\",shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",data_website:\"" + data_website + "\",data_region:\"" + CommentT.getData_region() + "\",comment_content:\"" + CommentT.getComment_content() + "\",data_source:\"" + CommentT.getData_source() + "\",comment_rate:\"" + CommentT.getComment_rate() + "\",comment_time:\"" + CommentT.getComment_time() + "\",comment_user_name:\"" + CommentT.getComment_user_name() + "\",id:\"" + CommentT.get_id() + "\"}) ");
-                if (comment_pic_list != null && comment_pic_list.size() > 0) {
-                    for (String comment_pic : comment_pic_list) {
-                        transaction.run("merge(sp:Pictures{value:\"" + comment_pic + "\"})");
-                        transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(sp:Pictures{value:\"" + comment_pic + "\"}) merge (sc)-[:CommentIncludePicutre{name:\"评论包含的图片\"}]->(sp)");
+        try {
+
+             transaction = session.beginTransaction();
+            transaction.run("merge(sc:Comments{comment_user_rate:\"" + CommentT.getComment_user_rate() + "\",shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",data_website:\"" + data_website + "\",data_region:\"" + CommentT.getData_region() + "\",comment_content:\"" + CommentT.getComment_content() + "\",data_source:\"" + CommentT.getData_source() + "\",comment_rate:\"" + CommentT.getComment_rate() + "\",comment_time:\"" + CommentT.getComment_time() + "\",comment_user_name:\"" + CommentT.getComment_user_name() + "\",id:\"" + CommentT.get_id() + "\"}) ");
+            transaction.run("match(ss:Catering{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\"}),(sc:Comments{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}) merge(ss)-[:IncludeComments{name:\"餐饮包含的评论\"}]->(sc)");
+            if (comment_pic_list != null && comment_pic_list.size() > 0) {
+                for (String comment_pic : comment_pic_list) {
+                    transaction.run("merge(sp:Pictures{value:\"" + comment_pic + "\"})");//,comment_time:\"" + CommentT.getComment_time() + "\",
+                    transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}),(sp:Pictures{value:\"" + comment_pic + "\"}) merge (sc)-[:CommentIncludePicutre{name:\"评论包含的图片\"}]->(sp)");
+                }
+            }
+
+            if (comment_rate_tag !=null&&(!"".equals(comment_rate_tag))) {
+                Map<String, String> cateringCommentsRateTag = DianPingCateringUtils.getCateringCommentsRateTag(comment_rate_tag);
+                Set<String> strings = cateringCommentsRateTag.keySet();
+                for (String str : strings) {
+                    transaction.run("merge(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"})");
+                    transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}),(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"}) merge (sc)-[:CommentIncludeImpression{name:\"用户对餐饮的评分\"}]->(si)");
+                }
+            }
+            transaction.success();
+            transaction.close();
+
+            /*
+            session.writeTransaction(new TransactionWork<Object>() {
+                @Override
+                public Object execute(Transaction transaction) {
+                    StatementResult run = transaction.run("merge(sc:Comments{comment_user_rate:\"" + CommentT.getComment_user_rate() + "\",shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",data_website:\"" + data_website + "\",data_region:\"" + CommentT.getData_region() + "\",comment_content:\"" + CommentT.getComment_content() + "\",data_source:\"" + CommentT.getData_source() + "\",comment_rate:\"" + CommentT.getComment_rate() + "\",comment_time:\"" + CommentT.getComment_time() + "\",comment_user_name:\"" + CommentT.getComment_user_name() + "\",id:\"" + CommentT.get_id() + "\"}) ");
+                    transaction.run("match(ss:Catering{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\"}),(sc:Comments{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}) merge(ss)-[:IncludeComments{name:\"餐饮包含的评论\"}]->(sc)");
+                    if (comment_pic_list != null && comment_pic_list.size() > 0) {
+                        for (String comment_pic : comment_pic_list) {
+                            transaction.run("merge(sp:Pictures{value:\"" + comment_pic + "\"})");//,comment_time:\"" + CommentT.getComment_time() + "\",
+                            transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}),(sp:Pictures{value:\"" + comment_pic + "\"}) merge (sc)-[:CommentIncludePicutre{name:\"评论包含的图片\"}]->(sp)");
+                        }
                     }
 
                     if (comment_rate_tag !=null&&(!"".equals(comment_rate_tag))) {
@@ -42,18 +69,28 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                         Set<String> strings = cateringCommentsRateTag.keySet();
                         for (String str : strings) {
                             transaction.run("merge(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"})");
-                            transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"}) merge (sc)-[:CommentIncludeReview{name:\"用户对餐饮的评价\"}]->(si)");
+                            transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}),(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"}) merge (sc)-[:CommentIncludeImpression{name:\"用户对餐饮的评分\"}]->(si)");
                         }
                     }
+                    transaction.success();
+                    transaction.close();
+                    return null;
                 }
-
-
-
-                return null;
+            });
+*/
+        } catch (Exception ex) {
+            transaction.failure();
+            transaction.close();
+            ex.printStackTrace();
+            LogsUtils.WriteTheDataToFile(ex.getMessage(), "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/jiexierror2.txt");
+        }finally {
+            try {
+                System.out.println("--------------close()---------------");
+                close();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        });
-
-
+        }
         return false;
     }
 
@@ -125,8 +162,11 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
             LogsUtils.WriteTheDataToFile(cateringDomain.getShop_url() + "\n" + ex.getMessage() + "\n\n", "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/promationrror.txt");
 
         }finally {
-            if (session != null)
-            session.close();
+            try {
+                close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
 

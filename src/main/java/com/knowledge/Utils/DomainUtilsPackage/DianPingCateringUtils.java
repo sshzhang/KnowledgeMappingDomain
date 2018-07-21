@@ -35,25 +35,29 @@ public class DianPingCateringUtils {
 
     public static void main(String... args) {
 
-        //CreateCateringStaticContent();
 
+        CreateCateringStaticContent();
+        executorService = Executors.newFixedThreadPool(10);
         MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
         MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
         MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "大众点评"), Filters.eq("data_source", "餐饮"))).noCursorTimeout(true).iterator();
+        CateringCommentDomain dest = null;
         while (iterator.hasNext()) {
             try {
                 Document document = iterator.next();
-                CateringCommentDomain dest = (CateringCommentDomain) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.dazhongdianpingDomains.dianpingcatering.CateringCommentDomain", document);
+                 dest = (CateringCommentDomain) DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.dazhongdianpingDomains.dianpingcatering.CateringCommentDomain", document);
                 System.out.println(dest);
                 executorService.submit(new DianpingCateringNeo4jUtils(dest, null, 0));
                 System.out.println("------------------------");
             } catch (Exception ex) {
+                LogsUtils.WriteTheDataToFile(dest.getShop_name()+" "+dest.getComment_user_name()+"\n"+ex.getMessage(), "src/resources/jiexierror.txt");
                 ex.printStackTrace();
             }
         }
         executorService.shutdown();
+        LogsUtils.WriteTheDataToFile("executorService.shutdown()", "src/resources/jiexierror.txt");
         try {
-            if (!executorService.awaitTermination(10, TimeUnit.MINUTES)) {
+            if (!executorService.awaitTermination(50, TimeUnit.MINUTES)) {
                 executorService.shutdownNow();
             }
         } catch (InterruptedException e) {
@@ -83,7 +87,7 @@ public class DianPingCateringUtils {
                 System.out.println("------------------------");
             } catch (Exception ex) {
                 ex.printStackTrace();
-                LogsUtils.WriteTheDataToFile(cateringDomain.getShop_url() + "\n" + ex.getMessage() + "\n\n", "C:\\Users\\xiujiezhang\\KnowledgeMappingDomain\\src\\resources\\promationrror.txt");
+                LogsUtils.WriteTheDataToFile(cateringDomain.getShop_url() + "\n" + ex.getMessage() + "\n\n", "src/resources/jiexierror.txt");
             }
         }
         executorService.shutdown();

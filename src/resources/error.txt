@@ -1,0 +1,45 @@
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 94 (offset: 93))
+"merge(smn:Comments{comment_content:"环境太好了，房子干净舒适，泳池也很多太棒了！就是办入住全慢了点，五星级的早餐够丰富！以后去的话还会选择你们家！赞\(≧▽≦)/\(≧▽≦)/！",data_website:"携程",comment_time:"2016-08-05",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"家庭亲子",comment_score:5.0,comment_user_name:"_***9",comment_user_check_in:"2016年07月入住",data_source:"酒店",shop_name:"千岛湖润和建国度假酒店"})"
+                                                                                              ^
+Invalid input '以': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 65 (offset: 64))
+"merge(smn:Comments{comment_content:"豪华湖景房，非常差。以前住个几次、这次非常失望2楼房间\以后不在入住、随便给个房间、就因为是携程网定就这样吗？熱水半天沒有、扯蛋",data_website:"携程",comment_time:"2016-06-03",comment_score_text:"位置:4.0,设施:1.0,服务:1.0,卫生:3.0",comment_type:"朋友出游",comment_score:2.299999952316284,comment_user_name:"LeeLei",comment_user_check_in:"2016年06月入住",data_source:"酒店",shop_name:"千岛湖润和建国度假酒店"})"
+                                                                 ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 65 (offset: 64))
+"merge(smn:Comments{comment_content:"服务员小石很热情，很有礼貌，文广轩的鱼头味道也不错！赞\(≧▽≦)/",data_website:"携程",comment_time:"2017-12-21",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"家庭亲子",comment_score:5.0,comment_user_name:"3***9",comment_user_check_in:"2017年12月入住",data_source:"酒店",shop_name:"千岛湖梅地亚君澜度假酒店"})"
+                                                                 ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 57 (offset: 56))
+"merge(smn:Comments{comment_content:"真好，客服很友好，餐厅服务员服务周到，\(≧▽≦)/",data_website:"携程",comment_time:"2017-06-10",comment_score_text:"位置:4.0,设施:4.0,服务:5.0,卫生:5.0",comment_type:"情侣出游",comment_score:4.5,comment_user_name:"2***6",comment_user_check_in:"2017年06月入住",data_source:"酒店",shop_name:"千岛湖梅地亚君澜度假酒店"})"
+                                                         ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 39 (offset: 38))
+"merge(smn:Comments{comment_content:"赞\(≧▽≦)/，下次还选择这家",data_website:"携程",comment_time:"2016-05-16",comment_score_text:"位置:5.0,设施:5.0,服务:4.0,卫生:5.0",comment_type:"独自旅行",comment_score:4.800000190734863,comment_user_name:"Jacob9",comment_user_check_in:"2016年05月入住",data_source:"酒店",shop_name:"千岛湖绿城蓝湾度假酒店"})"
+                                       ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 68 (offset: 67))
+"merge(smn:Comments{comment_content:"酒店位置佳，房间外面就是千岛湖景，服务好房间中还有除湿器，赞\(≧▽≦)/。出入有电瓶车随时接送，太贴心了。",data_website:"携程",comment_time:"2018-05-24",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"朋友出游",comment_score:5.0,comment_user_name:"M***1",comment_user_check_in:"2018年05月入住",data_source:"酒店",shop_name:"千岛湖温馨岛蝶来度假酒店(原浙旅度假酒店)"})"
+                                                                    ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 114 (offset: 113))
+"merge(smn:Comments{comment_content:"酒店环境优美上档次，同类酒店最新，服务热情周到，特别是大堂小戴先生的热情服务，让我们有宾至如归的感觉，导游部小妹也是介绍得相当到位，性价比太高了，给个赞\(≧▽≦)/",data_website:"携程",comment_time:"2018-05-24",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"朋友出游",comment_score:5.0,comment_user_name:"娘娘府",comment_user_check_in:"2018年05月入住",data_source:"酒店",shop_name:"千岛湖伯瑞特温泉度假酒店"})"
+                                                                                                                  ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 49 (offset: 48))
+"merge(smn:Comments{comment_content:"房间很大，环境很好！赞\(≧▽≦)/",data_website:"携程",comment_time:"2016-02-22",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"其它",comment_score:5.0,comment_user_name:"l***1",comment_user_check_in:"2016年02月入住",data_source:"酒店",shop_name:"千岛湖半岛时光度假公寓"})"
+                                                 ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 169 (offset: 168))
+"merge(smn:Comments{comment_content:"酒店就在湖边上，风景特别好，酒店还有戏水池，供小朋友游玩，小朋友玩的很开心，大人游泳的话可以去蝶来温馨岛度假酒店免费游泳，酒店餐厅非常别出心裁，出了个天天特价菜，只需9.9一道，周五周六还有自助烧烤，啤酒饮料畅饮，味道不错，还有露天电影看，家人都非常喜欢，点个赞\(≧▽≦)/",data_website:"携程",comment_time:"2017-08-03",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"家庭亲子",comment_score:5.0,comment_user_name:"M***4",comment_user_check_in:"2017年05月入住",data_source:"酒店",shop_name:"千岛湖浙旅名庭酒店"})"
+                                                                                                                                                                         ^
+Invalid input '伙': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 109 (offset: 108))
+"merge(smn:Comments{comment_content:"民宿很棒，位置好找，停车很方便，环境优美，空气清昕，服务态度好，热情周到，很贴心，房间空间很大，设备齐全，还可加床，卫生干净，早餐很营养，我和\伙伴们都非常满意，值！！",data_website:"携程",comment_time:"2018-06-02",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"朋友出游",comment_score:5.0,comment_user_name:"M***4",comment_user_check_in:"2018年06月入住",data_source:"酒店",shop_name:"千岛湖民之宿民宿"})"
+                                                                                                             ^
+Invalid input '位': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 102 (offset: 101))
+"merge(smn:Comments{comment_content:"丽景在平时工作日出行这个价格相对来说是挺不错的 但是早餐磕碜了点 千岛湖的话印象不是那么好 商业气息浓重 我们6人包了快艇150\位 绝对是在受罪 因为快艇司机态度不好 而且没有投诉监督 上岛后走个桥都要10块钱一个人 岛上的饭店更是一个鱼头要卖600多 缆车60块一个人 2分钟就结束了 2个字真心坑爹 ！但是我们之前去了龙潭大峡谷漂流 刺激 好玩 就是里面去的山路崎岖 不好开 容易走错路 建议自驾游的朋友车停酒店再叫车去龙潭大峡谷 ！目前的感受只有这点 个人意见 千岛湖你来了一次去就不会再来第二次了！",data_website:"携程",comment_time:"2015-07-16",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"朋友出游",comment_score:5.0,comment_user_name:"M***8",comment_user_check_in:"2015年07月入住",data_source:"酒店",shop_name:"千岛湖丽景酒店"})"
+                                                                                                      ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 221 (offset: 220))
+"merge(smn:Comments{comment_content:"我们计划自驾去千岛湖游玩两天，于是考虑想要欣赏湖景就预定了千岛湖丽景酒店。当天到千岛湖正好下雨，所以先到酒店休息，前台服务还是很周到的，帮我们把标准湖景免费升级成豪华湖景，可能是因为下雨天人少，嘻嘻，房间确实很赞，不仅能欣赏湖景，配套设施也很好，在10楼自来水很给力，淋浴房和浴缸也是分开来的，住在里面还是很舒心的。关键入住后天气马上放晴了，可以开开心心地去游湖啦~\(≧▽≦)/~啦啦啦",data_website:"携程",comment_time:"2015-07-02",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"朋友出游",comment_score:5.0,comment_user_name:"**宝贝VIP",comment_user_check_in:"2015年06月入住",data_source:"酒店",shop_name:"千岛湖丽景酒店"})"
+                                                                                                                                                                                                                             ^
+Invalid input '斤': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 70 (offset: 69))
+"merge(smn:Comments{comment_content:"价格服务适合出游人士，酒店餐厅的千岛湖鱼做的不错，价格中等48元\斤。",data_website:"携程",comment_time:"2017-08-02",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"朋友出游",comment_score:5.0,comment_user_name:"M***7",comment_user_check_in:"2017年07月入住",data_source:"酒店",shop_name:"汉庭酒店(千岛湖中心码头店)"})"
+                                                                      ^
+Invalid input '(': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 50 (offset: 49))
+"merge(smn:Comments{comment_content:"房间很气派，观景阳台很赞\(≧▽≦)/出门就是美景，不虚此行的！",data_website:"携程",comment_time:"2017-04-03",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"家庭亲子",comment_score:5.0,comment_user_name:"_***4",comment_user_check_in:"2017年04月入住",data_source:"酒店",shop_name:"千岛湖阳光水岸度假村忆景度假公寓"})"
+                                                  ^
+Invalid input '物': expected '\', ''', '"', 'b', 'f', 'n', 'r', 't', UTF16 or UTF32 (line 1, column 77 (offset: 76))
+"merge(smn:Comments{comment_content:"千岛湖真的是一个极具魅力的地方,视野开阔景色优美,彩蝶驿站坐落这美景之中,装修\物件摆设都很有韵味,充满浪漫气息,个人非常喜欢,会再光顾!!!",data_website:"携程",comment_time:"2017-11-24",comment_score_text:"位置:5.0,设施:5.0,服务:5.0,卫生:5.0",comment_type:"情侣出游",comment_score:5.0,comment_user_name:"M***6",comment_user_check_in:"2017年11月入住",data_source:"酒店",shop_name:"千岛湖采蝶驿站"})"
+                                                                             ^
