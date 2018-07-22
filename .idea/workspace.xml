@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d0f6a6-58d5-46cd-b3a0-8e094364c3bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$1.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$2.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/jiexierror.txt" afterPath="$PROJECT_DIR$/src/resources/jiexierror.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/cateringContent.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/count.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/entertainmentContent.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/entertainmentNeo4jContent.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/error.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/jiexierror.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/jiexierror2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/name.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/note.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resources/promationrror.txt" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,21 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jiexierror.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/jiexierror.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DianPingCateringUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="114" column="44" lean-forward="true" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+            <state relative-caret-position="405">
+              <caret line="192" column="29" lean-forward="true" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -332,12 +320,6 @@
               <item name="knowledge" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
               <item name="Neo4jUtilsPackage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KnowledgeMappingDomain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KnowledgeMappingDomain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -597,6 +579,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -607,7 +590,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -846,6 +828,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -945,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="114" column="44" lean-forward="true" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+        <state relative-caret-position="405">
+          <caret line="192" column="29" lean-forward="true" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
