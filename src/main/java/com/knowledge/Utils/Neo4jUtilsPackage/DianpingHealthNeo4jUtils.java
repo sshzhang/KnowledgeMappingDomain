@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain, DianpingCateringApplicationDomain> {
+public class DianpingHealthNeo4jUtils extends Neo4jUtils<CateringCommentDomain, DianpingCateringApplicationDomain> {
 
-    public DianpingCateringNeo4jUtils(CateringCommentDomain CommenT, DianpingCateringApplicationDomain allStaticContent, int status) {
+    public DianpingHealthNeo4jUtils(CateringCommentDomain CommenT, DianpingCateringApplicationDomain allStaticContent, int status) {
         super(CommenT, allStaticContent, status);
     }
 
@@ -32,10 +32,9 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                 @Override
                 public Object execute(Transaction transaction) {
                     try {
-
                         System.out.println("merge(sc:Comments{comment_user_rate:\"" + CommentT.getComment_user_rate() + "\",shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",data_website:\"" + data_website + "\",data_region:\"" + CommentT.getData_region() + "\",comment_content:\"" + CommentT.getComment_content() + "\",data_source:\"" + CommentT.getData_source() + "\",comment_rate:\"" + CommentT.getComment_rate() + "\",comment_time:\"" + CommentT.getComment_time() + "\",comment_user_name:\"" + CommentT.getComment_user_name() + "\",id:\"" + CommentT.get_id() + "\"}) ");
                         StatementResult run = transaction.run("merge(sc:Comments{comment_user_rate:\"" + CommentT.getComment_user_rate() + "\",shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",data_website:\"" + data_website + "\",data_region:\"" + CommentT.getData_region() + "\",comment_content:\"" + CommentT.getComment_content() + "\",data_source:\"" + CommentT.getData_source() + "\",comment_rate:\"" + CommentT.getComment_rate() + "\",comment_time:\"" + CommentT.getComment_time() + "\",comment_user_name:\"" + CommentT.getComment_user_name() + "\",id:\"" + CommentT.get_id() + "\"}) ");
-                        transaction.run("match(ss:Catering{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\"}),(sc:Comments{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}) merge(ss)-[:IncludeComments{name:\"餐饮包含的评论\"}]->(sc)");
+                        transaction.run("match(ss:Shopping{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\"}),(sc:Comments{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}) merge(ss)-[:IncludeComments{name:\"健康包含的评论\"}]->(sc)");
                         if (comment_pic_list != null && comment_pic_list.size() > 0) {
                             for (String comment_pic : comment_pic_list) {
                                 transaction.run("merge(sp:Pictures{value:\"" + comment_pic + "\"})");//,comment_time:\"" + CommentT.getComment_time() + "\",
@@ -48,10 +47,9 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                             Set<String> strings = cateringCommentsRateTag.keySet();
                             for (String str : strings) {
                                 transaction.run("merge(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"})");
-                                transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}),(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"}) merge (sc)-[:CommentIncludeImpression{name:\"用户对餐饮的评分\"}]->(si)");
+                                transaction.run("match(sc:Comments{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\",comment_user_name:\""+CommentT.getComment_user_name()+"\",comment_time:\""+CommentT.getComment_time()+"\"}),(si:Shope_gust_impression{name:\"" + str + "\",shuxing:\"" + cateringCommentsRateTag.get(str) + "\"}) merge (sc)-[:CommentIncludeImpression{name:\"用户对健康的评分\"}]->(si)");
                             }
                         }
-
 
                     } catch (Exception ex) {
                         throw new RuntimeException(shop_url+" "+ex.getMessage());
@@ -61,7 +59,7 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
             });
         } catch (Exception ex) {
             ex.printStackTrace();
-            LogsUtils.WriteTheDataToFile(ex.getMessage(), "src/resources/cateringNeo4jContent.txt");
+            LogsUtils.WriteTheDataToFile(ex.getMessage(), "src/resources/heathNeo4jContent.txt");
         }finally {
             try {
                 session.close();
@@ -101,26 +99,26 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                     String shop_rate = cateringDomain.getShop_rate();
                     String id = cateringDomain.get_id();
                     try {
-                        StatementResult run = tx.run("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) return labels(sf) as label,sf.crawl_time as crawl_time");
+                        StatementResult run = tx.run("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) return labels(sf) as label,sf.crawl_time as crawl_time");
                         if (run.hasNext()) {//存在数据记录
                             Record record = run.next();
                             List<Object> labels = record.get("label").asList();
                             if (labels.contains(subtype_name)) {//存在相应的标签记录  看是否更新数据
                                 String crawl_time = record.get("crawl_time").toString().replace("\"", "");
                                 if (!ncrawl_time.equals(crawl_time)) { //时间不相等就更新
-                                    System.out.println("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) set sf.shop_phone=\"" + shop_phone + "\",sf.crawl_time=\"" + crawl_time + "\",sf.shop_price=" + shop_price + ",sf.shop_address=\"" + shop_address + "\",sf.shop_time=\"" + shop_time + "\",sf.shop_comment_num=" + cateringDomain.getShop_comment_num() + "");
-                                    tx.run("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) set sf.shop_phone=\"" + shop_phone + "\",sf.crawl_time=\"" + crawl_time + "\",sf.shop_price=" + shop_price + ",sf.shop_address=\"" + shop_address + "\",sf.shop_time=\"" + shop_time + "\",sf.shop_comment_num=" + cateringDomain.getShop_comment_num() + "");
+                                    System.out.println("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) set sf.shop_phone=\"" + shop_phone + "\",sf.crawl_time=\"" + crawl_time + "\",sf.shop_price=" + shop_price + ",sf.shop_address=\"" + shop_address + "\",sf.shop_time=\"" + shop_time + "\",sf.shop_comment_num=" + cateringDomain.getShop_comment_num() + "");
+                                    tx.run("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) set sf.shop_phone=\"" + shop_phone + "\",sf.crawl_time=\"" + crawl_time + "\",sf.shop_price=" + shop_price + ",sf.shop_address=\"" + shop_address + "\",sf.shop_time=\"" + shop_time + "\",sf.shop_comment_num=" + cateringDomain.getShop_comment_num() + "");
                                     //先所有关系节点，再重新构建
-                                    tx.run("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"})-[r]->(n) delete r,n");
+                                    tx.run("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"})-[r]->(n) delete r,n");
                                     CreateCateringRelationship(tx, shop_name, shop_url, id, shop_tags, dianpingshopMenuDomain, shopPromotionDomain, shopStatisticDomain);
                                 }
                             } else {//不存在相应的记录   添加标签类别信息
-                                tx.run("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) set sf:" + subtype_name + " return sf");
+                                tx.run("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) set sf:" + subtype_name + " return sf");
                             }
                         } else {//不存在数据记录  添加
-                            tx.run("create(sf:Catering:" + subtype_name + "{id:\"" + cateringDomain.get_id() + "\",shop_rate:\"" + shop_rate + "\",shop_name:\"" + shop_name + "\",crawl_time:\"" + ncrawl_time + "\",data_website:\"" + cateringDomain.getData_website() + "\",shop_price:" + shop_price + ",data_source:\"" + cateringDomain.getData_source() + "\",data_region:\"" + cateringDomain.getData_region() + "\",shop_url:\"" + shop_url + "\",shop_address:\"" + shop_address + "\",shop_time:\"" + shop_time + "\",shop_phone:\"" + shop_phone + "\"}) return sf");
+                            tx.run("create(sf:Health:" + subtype_name + "{id:\"" + cateringDomain.get_id() + "\",shop_rate:\"" + shop_rate + "\",shop_name:\"" + shop_name + "\",crawl_time:\"" + ncrawl_time + "\",data_website:\"" + cateringDomain.getData_website() + "\",shop_price:" + shop_price + ",data_source:\"" + cateringDomain.getData_source() + "\",data_region:\"" + cateringDomain.getData_region() + "\",shop_url:\"" + shop_url + "\",shop_address:\"" + shop_address + "\",shop_time:\"" + shop_time + "\",shop_phone:\"" + shop_phone + "\"}) return sf");
 
-                            System.out.println("create(sf:Catering:" + subtype_name + "{id:\"" + cateringDomain.get_id() + "\",shop_rate:\"" + shop_rate + "\",shop_name:\"" + shop_name + "\",crawl_time:\"" + ncrawl_time + "\",data_website:\"" + cateringDomain.getData_website() + "\",shop_price:" + shop_price + ",data_source:\"" + cateringDomain.getData_source() + "\",data_region:\"" + cateringDomain.getData_region() + "\",shop_url:\"" + shop_url + "\",shop_address:\"" + shop_address + "\",shop_time:\"" + shop_time + "\",shop_phone:\"" + shop_phone + "\"}) return sf");
+                            System.out.println("create(sf:Health:" + subtype_name + "{id:\"" + cateringDomain.get_id() + "\",shop_rate:\"" + shop_rate + "\",shop_name:\"" + shop_name + "\",crawl_time:\"" + ncrawl_time + "\",data_website:\"" + cateringDomain.getData_website() + "\",shop_price:" + shop_price + ",data_source:\"" + cateringDomain.getData_source() + "\",data_region:\"" + cateringDomain.getData_region() + "\",shop_url:\"" + shop_url + "\",shop_address:\"" + shop_address + "\",shop_time:\"" + shop_time + "\",shop_phone:\"" + shop_phone + "\"}) return sf");
                             CreateCateringRelationship(tx, shop_name, shop_url, id, shop_tags, dianpingshopMenuDomain, shopPromotionDomain, shopStatisticDomain);
 
                         }
@@ -134,7 +132,7 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
             });
         } catch (Exception ex) {
             ex.printStackTrace();
-            LogsUtils.WriteTheDataToFile(cateringDomain.getShop_url() + "\n" + ex.getMessage() + "\n\n", "src/resources/cateringNeo4jContent.txt");
+            LogsUtils.WriteTheDataToFile(cateringDomain.getShop_url() + "\n" + ex.getMessage() + "\n\n", "src/resources/heathNeo4jContent.txt");
 
         } finally {
             try {
@@ -166,8 +164,8 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                 float value = shop_tags.get(key);
                 tx.run("create(si:Shope_gust_impression{name:\"" + key + "\",shuxing:" + value + ",id:\"" + id + "\"})");
                 System.out.println("create(si:Shope_gust_impression{name:\"" + key + "\",shuxing:" + value + ",id:\"" + id + "\"})");
-                System.out.println("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(si:Shope_gust_impression{id:\"" + id + "\",name:\"" + key + "\",shuxing:" + value + "}) merge(sf)-[:CateringIncludeShopTags{name:\"餐饮包含的评价标签\"}]->(si) return si");
-                tx.run("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(si:Shope_gust_impression{id:\"" + id + "\",name:\"" + key + "\",shuxing:" + value + "}) merge(sf)-[:CateringIncludeShopTags{name:\"餐饮包含的评价标签\"}]->(si) return si");
+                System.out.println("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(si:Shope_gust_impression{id:\"" + id + "\",name:\"" + key + "\",shuxing:" + value + "}) merge(sf)-[:ShoppingIncludeShopTags{name:\"健康包含的评价标签\"}]->(si) return si");
+                tx.run("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(si:Shope_gust_impression{id:\"" + id + "\",name:\"" + key + "\",shuxing:" + value + "}) merge(sf)-[:ShoppingIncludeShopTags{name:\"健康包含的评价标签\"}]->(si) return si");
             }
         }
 
@@ -180,8 +178,8 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                     String picture = dianpingMenuDomain.getPicture();
                     String price = dianpingMenuDomain.getPrice();
                     String suggestNumber = dianpingMenuDomain.getSuggestNumber();
-                    tx.run("create(sm:CateringMenu{name:\"" + key + "\",picture:\"" + picture + "\",price:\"" + price + "\",number:\"" + suggestNumber + "\",id:\"" + id + "\"})");
-                    tx.run("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(sm:CateringMenu{name:\"" + key + "\",picture:\"" + picture + "\",price:\"" + price + "\",number:\"" + suggestNumber + "\",id:\"" + id + "\"}) merge(sf)-[:CateringIncludeMenu{name:\"餐饮包含的菜单\"}]->(sm)");
+                    tx.run("create(sm:HealthMenu{name:\"" + key + "\",picture:\"" + picture + "\",price:\"" + price + "\",number:\"" + suggestNumber + "\",id:\"" + id + "\"})");
+                    tx.run("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(sm:HealthMenu{name:\"" + key + "\",picture:\"" + picture + "\",price:\"" + price + "\",number:\"" + suggestNumber + "\",id:\"" + id + "\"}) merge(sf)-[:HealthIncludeMenu{name:\"健康包含的菜单\"}]->(sm)");
                 }
             }
             //TODO 环境  价目表
@@ -195,8 +193,8 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                 String currPrice = dianpingCateringShopPromotionDomain.getCurrPrice();
                 String hadSaled = dianpingCateringShopPromotionDomain.getHadSaled();
                 String originalPrice = dianpingCateringShopPromotionDomain.getOriginalPrice();
-                tx.run("create(ss:CateringPromotion{name:\"" + key + "\",currPrice:\"" + currPrice + "\",originalPrice:\"" + originalPrice + "\",hadSaled:\"" + hadSaled + "\",id:\"" + id + "\"})");
-                tx.run("match(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(ss:CateringPromotion{name:\"" + key + "\",currPrice:\"" + currPrice + "\",originalPrice:\"" + originalPrice + "\",hadSaled:\"" + hadSaled + "\",id:\"" + id + "\"}) merge (sf)-[:CateringIncludePromotion{name:\"餐饮包含的促销优惠\"}]->(ss)");
+                tx.run("create(ss:Promotion{name:\"" + key + "\",currPrice:\"" + currPrice + "\",originalPrice:\"" + originalPrice + "\",hadSaled:\"" + hadSaled + "\",id:\"" + id + "\",type:\"健康优惠促销\"})");
+                tx.run("match(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(ss:Promotion{name:\"" + key + "\",currPrice:\"" + currPrice + "\",originalPrice:\"" + originalPrice + "\",hadSaled:\"" + hadSaled + "\",id:\"" + id + "\",type:\"健康优惠促销\"}) merge (sf)-[:HealthIncludePromotion{name:\"购物包含的促销优惠\"}]->(ss)");
             }
         }
         if (shopStatisticDomain != null) {
@@ -211,7 +209,7 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                     String name = allstr.getName();
                     int attribute = allstr.getAttribute();
                     tx.run("create(si:Shope_gust_impression{name:\"" + name + "\",shuxing:" + attribute + ",id:\"" + id + "\"})");
-                    tx.run("match(si:Shope_gust_impression{name:\"" + name + "\",shuxing:" + attribute + ",id:\"" + id + "\"}),(sf:Catering{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) merge (sf)-[:CateringIncludeReviewNum{name:\"餐饮包含的评论个数\"}]->(si)");
+                    tx.run("match(si:Shope_gust_impression{name:\"" + name + "\",shuxing:" + attribute + ",id:\"" + id + "\"}),(sf:Health{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}) merge (sf)-[:HealthIncludeReviewNum{name:\"健康包含的评论个数\"}]->(si)");
                 }
             }
 
@@ -221,7 +219,7 @@ public class DianpingCateringNeo4jUtils extends Neo4jUtils<CateringCommentDomain
                     String name = reviewDataDomain.getName();
                     int attribute = reviewDataDomain.getAttribute();
                     tx.run("create(si:Shope_gust_impression{name:\"" + name + "\",shuxing:\"" + attribute + "\",id:\"" + id + "\"})");
-                    tx.run("match(si:Shope_gust_impression{name:\"" + name + "\",shuxing:\"" + attribute + "\",id:\"" + id + "\"}),(sf:Catering{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\"}) merge(sf)-[:CateringIncludeReviewNum{name:\"餐饮包含的评论个数\"}]->(si)");
+                    tx.run("match(si:Shope_gust_impression{name:\"" + name + "\",shuxing:\"" + attribute + "\",id:\"" + id + "\"}),(sf:Shopping{shop_name:\""+shop_name+"\",shop_url:\""+shop_url+"\"}) merge(sf)-[:ShoppingIncludeReviewNum{name:\"健康包含的评论个数\"}]->(si)");
                 }
             }
         }

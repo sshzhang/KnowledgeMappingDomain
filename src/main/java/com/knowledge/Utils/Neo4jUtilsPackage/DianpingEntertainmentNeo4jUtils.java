@@ -207,7 +207,7 @@ public class DianpingEntertainmentNeo4jUtils extends Neo4jUtils<CateringCommentD
                 String hadSaled = dianpingCateringShopPromotionDomain.getHadSaled();
                 String originalPrice = dianpingCateringShopPromotionDomain.getOriginalPrice();
                 tx.run("create(ss:Promotion{name:\"" + key + "\",currPrice:\"" + currPrice + "\",originalPrice:\"" + originalPrice + "\",hadSaled:\"" + hadSaled + "\",id:\"" + id + "\",type:\"娱乐优惠促销\"})");
-                tx.run("match(sf:Entertainment{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(ss:Promotion{name:\"" + key + "\",currPrice:\"" + currPrice + "\",originalPrice:\"" + originalPrice + "\",hadSaled:\"" + hadSaled + "\",id:\"" + id + "\",type:\"娱乐优惠促销\"}) merge (sf)-[:CateringIncludePromotion{name:\"娱乐包含的促销优惠\"}]->(ss)");
+                tx.run("match(sf:Entertainment{shop_name:\"" + shop_name + "\",shop_url:\"" + shop_url + "\"}),(ss:Promotion{name:\"" + key + "\",currPrice:\"" + currPrice + "\",originalPrice:\"" + originalPrice + "\",hadSaled:\"" + hadSaled + "\",id:\"" + id + "\",type:\"娱乐优惠促销\"}) merge (sf)-[:EntertainmentIncludePromotion{name:\"娱乐包含的促销优惠\"}]->(ss)");
             }
         }
         if (shopStatisticDomain != null) {

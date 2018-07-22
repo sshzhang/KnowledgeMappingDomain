@@ -2,31 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d0f6a6-58d5-46cd-b3a0-8e094364c3bf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/KnowledgeMappingDomain_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/KnowledgeMappingDomain_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/C:/Users/xiujiezhang/KnowledgeMappingDomain/src/resources/promationrror.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/testUtils$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/CommonUtilsPackage/LogsUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/CommonUtilsPackage/LogsUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$1.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$2.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/QunaerUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/QunaerUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/testUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/testUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.class" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/jiexierror.txt" afterPath="$PROJECT_DIR$/src/resources/jiexierror.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,12 +28,55 @@
     <SUITE FILE_PATH="coverage/KnowledgeMappingDomain$XieChengHotelUtils.ic" NAME="XieChengHotelUtils Coverage Results" MODIFIED="1530706422566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DianPingCateringUtils.java" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="XieChengHotelNeo4jUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CateringCommentDomain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+              <folding>
+                <element signature="e#3968#3969#0" expanded="true" />
+                <element signature="e#4024#4025#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DianpingCarNeo4jUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3780">
+              <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jiexierror.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/jiexierror.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DianPingCateringUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="120" column="57" lean-forward="false" selection-start-line="120" selection-start-column="57" selection-end-line="120" selection-end-column="57" />
+            <state relative-caret-position="351">
+              <caret line="114" column="44" lean-forward="true" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,41 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CateringDomain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringDomain.java">
+      <file leaf-file-name="DianpingHealthNeo4jUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testUtils.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DianpingCateringNeo4jUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DianpingCateringApplicationDomain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/DianpingCateringApplicationDomain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="486">
+              <caret line="27" column="71" lean-forward="true" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -97,36 +97,9 @@
       <file leaf-file-name="DianpingEntertainmentNeo4jUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="124" column="21" lean-forward="false" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionPoolFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CateringCommentDomain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
-              <folding>
-                <element signature="e#3968#3969#0" expanded="true" />
-                <element signature="e#4024#4025#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1155">
+              <caret line="233" column="134" lean-forward="true" selection-start-line="233" selection-start-column="134" selection-end-line="233" selection-end-column="134" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,6 +127,7 @@
       <find>setComment_pic_list</find>
       <find>shop_comment_url</find>
       <find>comment_pic_list</find>
+      <find>shop_comment_num</find>
     </findStrings>
     <replaceStrings>
       <replace>:\&quot;&quot;</replace>
@@ -167,10 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/Sight/XieChengSightCombinationInfos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/XieChengNeo4jUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/XieChengSightNeo4jUitls.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/XieChengUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/XieChengSightUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/QunaerUtils.java" />
@@ -203,21 +173,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.java" />
-        <option value="$PROJECT_DIR$/src/resources/jiexierror.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/Neo4jUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java" />
         <option value="$PROJECT_DIR$/src/resources/error.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java" />
         <option value="$PROJECT_DIR$/src/resources/entertainmentContent.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringDomain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java" />
         <option value="$PROJECT_DIR$/src/resources/entertainmentNeo4jContent.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" />
+        <option value="$PROJECT_DIR$/KnowledgeMappingDomain.iml" />
+        <option value="$PROJECT_DIR$/src/resources/jiexierror.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" />
       </list>
     </option>
   </component>
@@ -277,6 +251,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -369,7 +344,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -385,6 +359,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.knowledge.Utils.Neo4jUtilsPackage" />
       <recent name="com.knowledge.domain.XieChengDomains" />
       <recent name="com.knowledge.Annotations" />
     </key>
@@ -485,17 +460,6 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="KnowledgeMappingDomain" />
-      <envs />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -518,6 +482,17 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="KnowledgeMappingDomain" />
+      <envs />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -613,12 +588,14 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31731844" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -626,13 +603,11 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,122 +618,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>163</line>
-          <properties />
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>165</line>
-          <properties />
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>172</line>
-          <properties />
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="130" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>123</line>
-          <properties />
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>140</line>
-          <properties />
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>144</line>
-          <properties />
-          <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="139" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>135</line>
-          <properties />
-          <option name="timeStamp" value="140" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>136</line>
-          <properties />
-          <option name="timeStamp" value="141" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>132</line>
-          <properties />
-          <option name="timeStamp" value="143" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>137</line>
-          <properties />
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>138</line>
-          <properties />
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="146" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>123</line>
-          <properties />
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="158" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="159" />
     </breakpoint-manager>
     <watches-manager>
@@ -796,35 +655,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringShopPromotionDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringPeopleReviewDataDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringReviewInfoDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="55" lean-forward="false" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4-sources.jar!/org/neo4j/driver/v1/Value.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringShopStatisticDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/java/jdk1.8.0_171/src.zip!/java/lang/Class.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/DataTransformateCommonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -944,24 +774,11 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2-sources.jar!/org/neo4j/driver/v1/Driver.java" />
     <entry file="file://$PROJECT_DIR$/src/resources/name.txt" />
     <entry file="file://$PROJECT_DIR$/src/resources/count.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5751">
-          <caret line="227" column="33" lean-forward="false" selection-start-line="227" selection-start-column="33" selection-end-line="227" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1532251210390" expanded="true" signature="24353:24486" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2781">
           <caret line="122" column="38" lean-forward="false" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="38" />
-          <folding>
-            <marker date="1532251210379" expanded="true" signature="7178:7235" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -969,15 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="72" column="22" lean-forward="false" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8">
           <caret line="17" column="66" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,36 +807,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1431">
           <caret line="53" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
+        <state relative-caret-position="594">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
-          <folding>
-            <element signature="e#3968#3969#0" expanded="true" />
-            <element signature="e#4024#4025#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="205" column="0" lean-forward="false" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,17 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="124" column="21" lean-forward="false" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1068,29 +842,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KnowledgeMappingDomain.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-803">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="77" column="47" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringDomain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="93" column="25" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/jiexierror.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="233" column="134" lean-forward="true" selection-start-line="233" selection-start-column="134" selection-end-line="233" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="120" column="57" lean-forward="false" selection-start-line="120" selection-start-column="57" selection-end-line="120" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="27" column="71" lean-forward="true" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        <state relative-caret-position="1088">
+          <caret line="218" column="35" lean-forward="true" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="174" column="63" lean-forward="true" selection-start-line="174" selection-start-column="63" selection-end-line="174" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6313#10797#0" expanded="true" />
+            <element signature="e#10796#10797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+          <folding>
+            <element signature="e#3968#3969#0" expanded="true" />
+            <element signature="e#4024#4025#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3780">
+          <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-          <folding />
+          <caret line="114" column="44" lean-forward="true" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
