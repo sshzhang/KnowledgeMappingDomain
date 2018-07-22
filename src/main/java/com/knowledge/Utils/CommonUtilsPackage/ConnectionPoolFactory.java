@@ -1,4 +1,4 @@
-package com.knowledge.Utils.DomainUtilsPackage;
+package com.knowledge.Utils.CommonUtilsPackage;
 
 import com.knowledge.Utils.CommonUtilsPackage.LogsUtils;
 import org.neo4j.driver.v1.AuthTokens;

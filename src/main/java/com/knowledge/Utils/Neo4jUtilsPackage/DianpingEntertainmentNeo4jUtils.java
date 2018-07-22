@@ -1,7 +1,7 @@
 package com.knowledge.Utils.Neo4jUtilsPackage;
 
 import com.knowledge.Utils.CommonUtilsPackage.LogsUtils;
-import com.knowledge.Utils.DomainUtilsPackage.ConnectionPoolFactory;
+import com.knowledge.Utils.CommonUtilsPackage.ConnectionPoolFactory;
 import com.knowledge.Utils.DomainUtilsPackage.DianPingCateringUtils;
 import com.knowledge.domain.DianpingCateringApplicationDomain;
 import com.knowledge.domain.dazhongdianpingDomains.dianpingcatering.*;

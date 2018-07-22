@@ -3,7 +3,7 @@ package com.knowledge.Utils.Neo4jUtilsPackage;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.knowledge.Annotations.FieldMethodAnnotation;
 import com.knowledge.Utils.CommonUtilsPackage.LogsUtils;
-import com.knowledge.Utils.DomainUtilsPackage.ConnectionPoolFactory;
+import com.knowledge.Utils.CommonUtilsPackage.ConnectionPoolFactory;
 import com.knowledge.domain.XieChengDomains.*;
 import com.knowledge.domain.XieChengHotelApplicationDomain;
 import org.neo4j.driver.v1.Session;

@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.knowledge.Utils.CommonUtilsPackage.DataTransformateCommonUtils;
 import com.knowledge.Utils.ConstructDataTypePackage.MyNode;
-import com.knowledge.Utils.DomainUtilsPackage.ConnectionPoolFactory;
+import com.knowledge.Utils.CommonUtilsPackage.ConnectionPoolFactory;
 import com.knowledge.Utils.DomainUtilsPackage.XieChengSightUtils;
 import com.knowledge.domain.XieChengDomains.Sight.*;
 import com.knowledge.domain.XieChengSightApplicationDomain;
