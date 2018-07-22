@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.knowledge.Utils.CommonUtilsPackage.DataTransformateCommonUtils;
 import com.knowledge.Utils.ConstructDataTypePackage.MyNode;
+import com.knowledge.Utils.DomainUtilsPackage.ConnectionPoolFactory;
 import com.knowledge.Utils.DomainUtilsPackage.XieChengSightUtils;
 import com.knowledge.domain.XieChengDomains.Sight.*;
 import com.knowledge.domain.XieChengSightApplicationDomain;
@@ -44,8 +45,9 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils<XieChengSightComments,Xi
         final String data_source = sightComments.getData_source();
         final String data_website = sightComments.getData_website();
         final String shop_name = sightComments.getShop_name();
-        Session session = this.driver.session();
+        Session session = null;
         try {
+            session = ConnectionPoolFactory.getDriverInfo(Thread.currentThread().getName()).session();
 
             session.writeTransaction(new TransactionWork<Object>() {
                 @Override
@@ -66,7 +68,7 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils<XieChengSightComments,Xi
             return false;
         } finally {
             try {
-                close();
+                session.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -92,8 +94,7 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils<XieChengSightComments,Xi
         final String features = introducecom.getFeatures();
         final String shop_service = xieChengSightDomain.getShop_service();
 
-        Session session =
-                this.driver.session();
+        Session session = ConnectionPoolFactory.getDriverInfo(Thread.currentThread().getName()).session();
 
         try {
             session.writeTransaction(new TransactionWork<Object>() {
@@ -290,7 +291,7 @@ public class XieChengSightNeo4jUitls extends Neo4jUtils<XieChengSightComments,Xi
             return false;
         }finally {
             try {
-                close();
+               session.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }

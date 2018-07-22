@@ -97,7 +97,7 @@ public class XieChengHotelUtils {
        }finally {
             executorService.shutdown();
             try {
-                if(!executorService.awaitTermination(10, TimeUnit.MINUTES))
+                if(!executorService.awaitTermination(120, TimeUnit.MINUTES))
                     executorService.shutdown();
 
             } catch (InterruptedException e) {
@@ -114,11 +114,12 @@ public class XieChengHotelUtils {
 
     public static void main(String... args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchFieldException, NoSuchMethodException, ClassNotFoundException, InterruptedException {
 
-        WriteXieChengStaticDatatToNeo4j();
+        //WriteXieChengStaticDatatToNeo4j();
         MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
         MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
         MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "携程"), Filters.eq("data_source", "酒店"))).noCursorTimeout(true).iterator();
         int i = 0;
+        ConnectionPoolFactory.close();
         executorService = Executors.newFixedThreadPool(10);
         while (iterator.hasNext()) {
             Document document = iterator.next();
@@ -131,13 +132,14 @@ public class XieChengHotelUtils {
         }
         try {
             executorService.shutdown();
-            if (!executorService.awaitTermination(20, TimeUnit.MINUTES)) {
+            if (!executorService.awaitTermination(120, TimeUnit.MINUTES)) {
                 executorService.shutdownNow();
             }
         } catch (InterruptedException ex) {
             ex.printStackTrace();
             executorService.shutdownNow();
         }finally {
+            ConnectionPoolFactory.close();
             remoteServiceClient.close();
         }
     }

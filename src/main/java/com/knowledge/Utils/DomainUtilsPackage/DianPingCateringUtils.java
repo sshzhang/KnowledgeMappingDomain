@@ -27,16 +27,42 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 大众点评美食工具解析类
+ * 大众点评美食(娱乐)工具解析类
  */
 public class DianPingCateringUtils {
 
-    private static ExecutorService executorService = Executors.newFixedThreadPool(10);
+    private static ExecutorService executorService =null;
 
     public static void main(String... args) {
 
 
-        CreateCateringStaticContent();
+        executorService = Executors.newFixedThreadPool(10);
+        MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
+        MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("shops");
+        MongoCursor<Document> iterator = collection.find(Filters.and(Filters.eq("data_website", "大众点评"), Filters.eq("data_source", "娱乐"))).iterator();
+
+        while (iterator.hasNext()) {
+            try {
+
+                Document document = iterator.next();
+                DataTransformateCommonUtils.DocumentConvextToModel("com.knowledge.domain.dazhongdianpingDomains.dianpingcatering.CateringCommentDomain", document);
+
+
+            } catch (Exception ex) {
+
+
+            }
+
+        }
+
+
+       /* CreateCateringStaticContent();
+        ConnectionPoolFactory.close();
+        CreateCateringCommentContent();*/
+
+    }
+
+    private static void CreateCateringCommentContent() {
         executorService = Executors.newFixedThreadPool(10);
         MongoClient remoteServiceClient = MongoDBConnectionUtils.getRemoteServiceClient();
         MongoCollection<Document> collection = remoteServiceClient.getDatabase("dspider2").getCollection("comments");
@@ -55,7 +81,7 @@ public class DianPingCateringUtils {
             }
         }
         executorService.shutdown();
-        LogsUtils.WriteTheDataToFile("executorService.shutdown()", "src/resources/jiexierror.txt");
+        LogsUtils.WriteTheDataToFile("executorService.shutdown()", "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/jiexierror.txt");
         try {
             if (!executorService.awaitTermination(50, TimeUnit.MINUTES)) {
                 executorService.shutdownNow();
@@ -65,7 +91,6 @@ public class DianPingCateringUtils {
         }finally {
             remoteServiceClient.close();
         }
-
     }
 
     private static void CreateCateringStaticContent() {
@@ -87,12 +112,12 @@ public class DianPingCateringUtils {
                 System.out.println("------------------------");
             } catch (Exception ex) {
                 ex.printStackTrace();
-                LogsUtils.WriteTheDataToFile(cateringDomain.getShop_url() + "\n" + ex.getMessage() + "\n\n", "src/resources/jiexierror.txt");
+                LogsUtils.WriteTheDataToFile(cateringDomain.getShop_url() + "\n" + ex.getMessage() + "\n\n", "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/jiexierror.txt");
             }
         }
         executorService.shutdown();
         try {
-            if (!executorService.awaitTermination(10, TimeUnit.MINUTES)) {
+            if (!executorService.awaitTermination(50, TimeUnit.MINUTES)) {
                 executorService.shutdownNow();
             }
         } catch (InterruptedException e) {

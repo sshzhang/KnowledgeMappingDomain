@@ -1,6 +1,3 @@
-http://www.dianping.com/shop/99421524
-Unable to establish connection in 5000ms
-
-
-千岛湖开元度假村.夏威夷西餐厅 XZY285990503
-Failed to establish connection with the server
+executorService.shutdown()
+executorService.shutdown()
+executorService.shutdown()

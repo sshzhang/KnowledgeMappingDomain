@@ -1,9 +1,5 @@
 package com.knowledge.Utils.Neo4jUtilsPackage;
 
-import org.neo4j.driver.v1.AuthTokens;
-import org.neo4j.driver.v1.Driver;
-import org.neo4j.driver.v1.GraphDatabase;
-
 import java.util.concurrent.Callable;
 
 /**
@@ -12,10 +8,7 @@ import java.util.concurrent.Callable;
 public  abstract  class Neo4jUtils<T,F>   implements Callable<Boolean>{
 
 
-    protected final Driver driver;
-    protected static final String uri = "bolt://localhost:7687";
-    protected  static final String user="neo4j";
-    protected  static final String password = "09120912";
+
     // 0 表示评论数据的迭代   1表示 静态数据的迭代
     protected int status;
     //评论数据对象
@@ -36,20 +29,16 @@ public  abstract  class Neo4jUtils<T,F>   implements Callable<Boolean>{
 
 
     private  Neo4jUtils() {
-        this.driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
     }
 
-    protected void close() throws Exception {
-        if (this.driver != null)
-            this.driver.close();
-    }
+
 
     /**
      * 评论数据集写入到图数据库中
      *
      * @param CommentT 具体的评论信息
      */
-    protected abstract boolean CreateApplicationCommentDataToNeo4jNode(T CommentT);
+    protected abstract boolean CreateApplicationCommentDataToNeo4jNode(T CommentT) throws InterruptedException;
 
 
     /**
@@ -59,7 +48,7 @@ public  abstract  class Neo4jUtils<T,F>   implements Callable<Boolean>{
     protected abstract boolean CreateApplicationStaticContentDataToNeo4jNode(F allStaticContent);
 
     @Override
-    public Boolean call() {
+    public Boolean call() throws InterruptedException {
         return this.status == 0 ? this.CreateApplicationCommentDataToNeo4jNode(this.CommentT) : this.CreateApplicationStaticContentDataToNeo4jNode(this.allStaticContent);
     }
 }
