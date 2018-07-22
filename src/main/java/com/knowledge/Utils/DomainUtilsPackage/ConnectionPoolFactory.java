@@ -12,7 +12,7 @@ import java.util.Set;
 public class ConnectionPoolFactory {
 
     private static final Map<String, Driver> connPools = new HashMap<>();
-    protected static final String uri = "bolt://localhost:7687";
+    protected static final String uri = "bolt://192.168.199.202:7687";
     protected  static final String user="neo4j";
     protected static final String password = "09120912";
 

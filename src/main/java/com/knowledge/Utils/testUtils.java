@@ -38,25 +38,9 @@ public class testUtils  {
 
         System.out.println(List.class.isAssignableFrom(ArrayList.class));*/
 
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-        for (int i = 0; i < 1000; i++)
-        executorService.submit(new Runnable() {
-            @Override
-            public void run() {
-                String name = Thread.currentThread().getName();
-                System.out.println(name);
-                LogsUtils.WriteTheDataToFile(name, "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/name.txt");
-            }
-        });
-
-        executorService.shutdown();
-        if (!executorService.awaitTermination(10, TimeUnit.MINUTES)) {
-            executorService.shutdownNow();
-        }
-
-
-
+        String text = "\"户外自助烧烤\\野炊\"";
+        System.out.println(text.replace("\\","/"));
 
     }
 }
