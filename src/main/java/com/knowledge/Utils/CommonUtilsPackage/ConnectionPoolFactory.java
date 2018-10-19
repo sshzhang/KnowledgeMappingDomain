@@ -1,6 +1,5 @@
 package com.knowledge.Utils.CommonUtilsPackage;
 
-import com.knowledge.Utils.CommonUtilsPackage.LogsUtils;
 import org.neo4j.driver.v1.AuthTokens;
 import org.neo4j.driver.v1.Driver;
 import org.neo4j.driver.v1.GraphDatabase;
@@ -12,18 +11,16 @@ import java.util.Set;
 public class ConnectionPoolFactory {
 
     private static final Map<String, Driver> connPools = new HashMap<>();
-    protected static final String uri = "bolt://192.168.199.202:7687";
+    protected static final String uri = "bolt://10.1.17.38:7687";
     protected  static final String user="neo4j";
-    protected static final String password = "09120912";
+    protected static final String password = "neo4j";
 
     public static synchronized  Driver getDriverInfo(String key) {
 
         Driver driver = null;
         if (!connPools.containsKey(key)) {
             driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
-
             driver.isEncrypted();
-
             connPools.put(key, driver);
         }else{
             driver = connPools.get(key);
