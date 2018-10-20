@@ -2,21 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82d0f6a6-58d5-46cd-b3a0-8e094364c3bf" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/ConnectionPoolFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.java" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/CommonUtilsPackage/LogsUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/CommonUtilsPackage/LogsUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/QunaerUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/QunaerUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/testUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/knowledge/Utils/testUtils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,46 +28,54 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/KnowledgeMappingDomain$XieChengHotelUtils.ic" NAME="XieChengHotelUtils Coverage Results" MODIFIED="1530706422566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1161938601">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="22" />
+          <entry key="java" value="24" />
+          <entry key="txt" value="12" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="22" />
+          <entry key="JAVA" value="24" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="5067" />
+          <entry key="txt" value="96" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="5067" />
+          <entry key="PLAIN_TEXT" value="96" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="XieChengHotelNeo4jUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CateringCommentDomain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-              <folding>
-                <element signature="e#3968#3969#0" expanded="true" />
-                <element signature="e#4024#4025#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DianpingCarNeo4jUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3780">
-              <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DianPingCateringUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4401">
-              <caret line="194" column="17" lean-forward="true" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+            <state relative-caret-position="300">
+              <caret line="141" column="60" selection-start-line="141" selection-start-column="60" selection-end-line="141" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,12 +83,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectionPoolFactory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/ConnectionPoolFactory.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/ThreeDistanceBeans.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="37" column="52" lean-forward="false" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="263">
+              <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+              <folding>
+                <element signature="e#179#180#0" expanded="true" />
+                <element signature="e#208#209#0" expanded="true" />
+                <element signature="e#249#250#0" expanded="true" />
+                <element signature="e#285#286#0" expanded="true" />
+                <element signature="e#323#324#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+                <element signature="e#401#402#0" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#471#472#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#585#586#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#747#748#0" expanded="true" />
+                <element signature="e#800#801#0" expanded="true" />
+                <element signature="e#840#841#0" expanded="true" />
+                <element signature="e#880#881#0" expanded="true" />
+                <element signature="e#911#912#0" expanded="true" />
+                <element signature="e#964#965#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
+                <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="e#1179#1180#0" expanded="true" />
+                <element signature="e#1211#1212#0" expanded="true" />
+                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="e#1271#1272#0" expanded="true" />
+                <element signature="e#1313#1314#0" expanded="true" />
+                <element signature="e#1347#1348#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1254">
+              <caret line="66" column="33" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CacluDistanceBeans.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="836">
+              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2926">
+              <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/LogsUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -106,6 +185,8 @@
       <find>shop_comment_url</find>
       <find>comment_pic_list</find>
       <find>shop_comment_num</find>
+      <find>千岛湖鸿廷国际酒店</find>
+      <find>千岛湖雅约湖景酒店</find>
     </findStrings>
     <replaceStrings>
       <replace>:\&quot;&quot;</replace>
@@ -119,14 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/XieChengSightUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/QunaerUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/ConstructDataTypePackage/MyNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/Sight/XieChengSightTicketSpecific.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/Sight/XieChengSightOrderNecessityKnow.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/Sight/XieChengSightCombinationTicket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/Sight/XieChengSightIntroduce.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/Sight/XieChengSightComments.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/XieChengHotelComments.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengHotelApplicationDomain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengSightApplicationDomain.java" />
@@ -140,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringShopPromotionDomain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringReviewInfoDomain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringPeopleReviewDataDomain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/MongoDBConnectionUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingCateringShopStatisticDomain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/DianpingCateringApplicationDomain.java" />
         <option value="$PROJECT_DIR$/src/resources/promationrror.txt" />
@@ -156,7 +228,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/ConnectionPoolFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java" />
         <option value="$PROJECT_DIR$/src/resources/entertainmentContent.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringDomain.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java" />
@@ -169,7 +240,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/MongoDBConnectionUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/HelloWorldExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/ConnectionPoolFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/MapBeans.java" />
+        <option value="$PROJECT_DIR$/src/resources/xcHotel.txt" />
+        <option value="$PROJECT_DIR$/src/resources/entertainMent.txt" />
+        <option value="$PROJECT_DIR$/src/resources/Catering.txt" />
+        <option value="$PROJECT_DIR$/src/resources/Shopping.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/ThreeDistanceBeans.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CacluDistanceBeans.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java" />
       </list>
     </option>
   </component>
@@ -206,30 +287,18 @@
     <option name="jreName" value="1.8" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1358" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="745" />
+    <option name="y" value="495" />
+    <option name="width" value="1855" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,41 +349,48 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="knowledge" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
-              <item name="CommonUtilsPackage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KnowledgeMappingDomain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KnowledgeMappingDomain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstructDataTypePackage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KnowledgeMappingDomain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KnowledgeMappingDomain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="knowledge" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
               <item name="DomainUtilsPackage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KnowledgeMappingDomain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KnowledgeMappingDomain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="knowledge" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
+              <item name="Neo4jUtilsPackage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KnowledgeMappingDomain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KnowledgeMappingDomain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="KnowledgeMappingDomain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KnowledgeMappingDomain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SearchEverywhereHistoryKey" value="DianpingCateringNeo4jUtils&#9;FILE&#9;file://C:/Users/xiujiezhang/KnowledgeMappingDomain/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java&#10;Projec&#9;FILE&#9;jar://C:/Users/xiujiezhang/.m2/repository/org/mongodb/mongo-java-driver/3.5.0/mongo-java-driver-3.5.0-sources.jar!/com/mongodb/client/model/Projections.java&#10;ExecutorCom&#9;PSI&#9;JAVA://java.util.concurrent.ExecutorCompletionService&#10;AbstractExec&#9;PSI&#9;JAVA://java.util.concurrent.AbstractExecutorService&#10;ExecutorSe&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/concurrent/ExecutorService.java&#10;Executor&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/concurrent/Executors.java&#10;Thread&#9;FILE&#9;jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Thread.java&#10;FutureTask&#9;PSI&#9;JAVA://java.util.concurrent.FutureTask&#10;Executors&#9;PSI&#9;JAVA://java.util.concurrent.Executors" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540017836976" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -339,187 +415,124 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DianPingCateringUtils">
-    <configuration name="DianPingCateringUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.DomainUtilsPackage.DianPingCateringUtils" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="KnowledgeMappingDomain" />
-      <envs />
-    </configuration>
-    <configuration name="XieChengHotelRoomInfoListSpecific" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.knowledge.domain.XieChengDomains.XieChengHotelRoomInfoListSpecific" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="KnowledgeMappingDomain" />
-      <envs />
-    </configuration>
-    <configuration name="XieChengHotelUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.knowledge.Utils.DomainUtilsPackage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.DomainUtilsPackage.XieChengHotelUtils" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="KnowledgeMappingDomain" />
-      <envs />
-    </configuration>
-    <configuration name="XieChengSightUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.knowledge.Utils.Neo4jUtilsPackage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.DomainUtilsPackage.XieChengSightUtils" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="KnowledgeMappingDomain" />
-      <envs />
-    </configuration>
+  <component name="RunManager" selected="Application.testUtils">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HEIGHT" value="0" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="WIDTH" value="0" />
-      <module />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
+    <configuration name="DianPingCateringUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.DomainUtilsPackage.DianPingCateringUtils" />
       <module name="KnowledgeMappingDomain" />
-      <envs />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-    </configuration>
-    <configuration name="testUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="HelloWorldExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.HelloWorldExample" />
+      <module name="KnowledgeMappingDomain" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.knowledge.Utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.testUtils" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="KnowledgeMappingDomain" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.XieChengHotelUtils" />
-      <item index="1" class="java.lang.String" itemvalue="Application.DianPingCateringUtils" />
-      <item index="2" class="java.lang.String" itemvalue="Application.testUtils" />
-      <item index="3" class="java.lang.String" itemvalue="Application.XieChengHotelRoomInfoListSpecific" />
-      <item index="4" class="java.lang.String" itemvalue="Application.XieChengSightUtils" />
+    <configuration name="QunaerUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.QunaerUtils" />
+      <module name="KnowledgeMappingDomain" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.knowledge.Utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XieChengSightUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.DomainUtilsPackage.XieChengSightUtils" />
+      <module name="KnowledgeMappingDomain" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.knowledge.Utils.Neo4jUtilsPackage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.knowledge.Utils.testUtils" />
+      <module name="KnowledgeMappingDomain" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.knowledge.Utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.DianPingCateringUtils" />
+      <item itemvalue="Application.testUtils" />
+      <item itemvalue="Application.XieChengSightUtils" />
+      <item itemvalue="Application.QunaerUtils" />
+      <item itemvalue="Application.HelloWorldExample" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.DianPingCateringUtils" />
-        <item index="1" class="java.lang.String" itemvalue="Application.testUtils" />
-        <item index="2" class="java.lang.String" itemvalue="Application.XieChengSightUtils" />
-        <item index="3" class="java.lang.String" itemvalue="Application.XieChengHotelRoomInfoListSpecific" />
-        <item index="4" class="java.lang.String" itemvalue="Application.XieChengHotelUtils" />
+      <list>
+        <item itemvalue="Application.testUtils" />
+        <item itemvalue="Application.HelloWorldExample" />
+        <item itemvalue="Application.QunaerUtils" />
+        <item itemvalue="Application.DianPingCateringUtils" />
+        <item itemvalue="Application.XieChengSightUtils" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -531,8 +544,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529656064830</updated>
+      <workItem from="1537146890215" duration="1865000" />
+      <workItem from="1539821591978" duration="44583000" />
+      <workItem from="1539910862208" duration="3013000" />
+      <workItem from="1539994302371" duration="13680000" />
     </task>
+    <task id="LOCAL-00001" summary="20181019">
+      <created>1539909105827</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539909105827</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="63141000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,33 +572,74 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31731844" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Web" order="0" side_tool="true" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="4" weight="0.26091763" />
+      <window_info id="Structure" order="5" weight="0.25" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32879582" />
+      <window_info anchor="bottom" id="Java Enterprise" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50193477" side_tool="true" weight="0.6418848" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4997236" weight="0.32879582" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49806523" visible="true" weight="0.34554973" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.4997236" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="ASM" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Web" order="0" side_tool="true" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="4" weight="0.26091763" />
+      <window_info id="Structure" order="5" weight="0.25" />
+      <window_info id="Image Layers" order="6" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32879582" />
+      <window_info anchor="bottom" id="Java Enterprise" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50193477" side_tool="true" weight="0.6418848" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.4997236" weight="0.32879582" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49806523" visible="true" weight="0.34554973" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.4997236" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="ASM" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Maven Projects" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -578,10 +647,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="20181019" />
+    <option name="LAST_COMMIT_MESSAGE" value="20181019" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="159" />
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="&quot;match(ss:Catering{shop_name:\&quot;&quot;+shop_name+&quot;\&quot;,shop_url:\&quot;&quot;+shop_url+&quot;\&quot;}),(sc:Comments{shop_name:\&quot;&quot;+shop_name+&quot;\&quot;,shop_url:\&quot;&quot;+shop_url+&quot;\&quot;,comment_user_name:\&quot;&quot;+CommentT.getComment_user_name()+&quot;\&quot;,comment_time:\&quot;&quot;+CommentT.getComment_time()+&quot;\&quot;}) merge(ss)-[:IncludeComments:{name:\&quot;餐饮包含的评论\&quot;}]-&gt;(sc)&quot;" />
@@ -590,6 +660,12 @@
         <watch expression="!ncrawl_time.equals(crawl_time)" />
         <watch expression="Thread.currentThread().getName()" language="JAVA" />
         <watch expression="ConnectionPoolFactor" />
+        <watch expression="run.list()" />
+        <watch expression="run.keys()" />
+        <watch expression="run.summary()" />
+        <watch expression="run.next()" />
+        <watch expression="shop_name.replace(&quot;\&quot;&quot;,&quot;&quot;)" language="JAVA" />
+        <watch expression="&quot;match(n)-[r:ridingDistance]-(m) where id(n)=&quot; + before.getId() + &quot; and id(m)=&quot; + after.getId() + &quot; return r&quot;" />
       </configuration>
     </watches-manager>
   </component>
@@ -599,6 +675,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>shop_name.replace(&quot;\&quot;&quot;,&quot;&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Thread.currentThread().getName()</expression-string>
         <language-id>JAVA</language-id>
@@ -617,300 +698,372 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/java/jdk1.8.0_171/src.zip!/java/lang/Class.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/DataTransformateCommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="39" column="57" lean-forward="true" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4.jar!/org/neo4j/driver/internal/net/SocketClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="96" column="53" lean-forward="false" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.8.0_171/src.zip!/java/util/concurrent/ThreadPoolExecutor.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4.jar!/org/neo4j/driver/v1/GraphDatabase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="12" column="66" lean-forward="false" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4.jar!/org/neo4j/driver/v1/Driver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4-sources.jar!/org/neo4j/driver/v1/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="139" column="76" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4-sources.jar!/org/neo4j/driver/v1/StatementRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="147" column="20" lean-forward="false" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4-sources.jar!/org/neo4j/driver/v1/TransactionWork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4-sources.jar!/org/neo4j/driver/v1/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="106" column="38" lean-forward="false" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4-sources.jar!/org/neo4j/driver/v1/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="76" column="55" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.4/neo4j-java-driver-1.4.4-sources.jar!/org/neo4j/driver/v1/GraphDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="119" column="7" lean-forward="true" selection-start-line="119" selection-start-column="7" selection-end-line="119" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/LogsUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/v1/Transaction.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.8.0_171/jre/lib/jsse.jar!/sun/security/ssl/HandshakeInStream.class" />
-    <entry file="jar:///usr/java/jdk1.8.0_171/jre/lib/jsse.jar!/sun/security/ssl/SSLEngineImpl.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/MongoDBConnectionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="30" column="59" lean-forward="false" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2-sources.jar!/org/neo4j/driver/internal/DriverFactory.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2-sources.jar!/org/neo4j/driver/v1/GraphDatabase.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengSightNeo4jUitls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.8.0_171/src.zip!/java/lang/Thread.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengSightUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2336">
-          <caret line="181" column="55" lean-forward="false" selection-start-line="181" selection-start-column="55" selection-end-line="181" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2-sources.jar!/org/neo4j/driver/internal/util/Clock.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2-sources.jar!/org/neo4j/driver/internal/retry/ExponentialBackoffRetryLogic.java" />
-    <entry file="jar:///usr/java/jdk1.8.0_171/src.zip!/java/util/concurrent/FutureTask.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2-sources.jar!/org/neo4j/driver/v1/Transaction.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2-sources.jar!/org/neo4j/driver/v1/Driver.java" />
-    <entry file="file://$PROJECT_DIR$/src/resources/name.txt" />
-    <entry file="file://$PROJECT_DIR$/src/resources/count.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/XieChengHotelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2781">
-          <caret line="122" column="38" lean-forward="false" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.4.2/neo4j-java-driver-1.4.2.jar!/org/neo4j/driver/v1/Driver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingMenuDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/DianpingshopMenuDomain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="17" column="66" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/Neo4jUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1431">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/entertainmentNeo4jContent.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/entertainmentContent.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/entertainmentContent.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/DianpingCateringApplicationDomain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-          <folding />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/KnowledgeMappingDomain.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-803">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1692">
-          <caret line="77" column="47" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
-          <folding />
-        </state>
+        <state relative-caret-position="-803" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringDomain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
-          <caret line="93" column="25" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="25" />
-          <folding />
+          <caret line="93" column="25" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/jiexierror.txt">
+    <entry file="file://$PROJECT_DIR$/src/resources/jiexierror.txt" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="218" column="35" lean-forward="true" selection-start-line="218" selection-start-column="35" selection-end-line="218" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="371">
+          <caret line="174" column="63" lean-forward="true" selection-start-line="174" selection-start-column="63" selection-end-line="174" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/XieChengHotelNeo4jUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingShoppingNeo4jUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="174" column="63" lean-forward="true" selection-start-line="174" selection-start-column="63" selection-end-line="174" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6313#10797#0" expanded="true" />
-            <element signature="e#10796#10797#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="198">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/dazhongdianpingDomains/dianpingcatering/CateringCommentDomain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding>
-            <element signature="e#3968#3969#0" expanded="true" />
-            <element signature="e#4024#4025#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="748">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCateringNeo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="37" column="68" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3476">
+          <caret line="167" column="17" selection-start-line="167" selection-start-column="17" selection-end-line="167" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2464">
+          <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/domain/XieChengDomains/XieChengHotel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="334" column="25" lean-forward="true" selection-start-line="334" selection-start-column="25" selection-end-line="334" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jdk/jdk1.8.0_181/src.zip!/java/util/concurrent/ExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="235" column="18" selection-start-line="235" selection-start-column="18" selection-end-line="235" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jdk/jdk1.8.0_181/src.zip!/java/util/concurrent/Callable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/Neo4jUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/MongoDBConnectionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jdk/jdk1.8.0_181/src.zip!/java/net/URLEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="191" column="35" lean-forward="true" selection-start-line="191" selection-start-column="35" selection-end-line="191" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/v1/StatementResult.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/v1/GraphDatabase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/internal/security/InternalAuthToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/v1/AuthTokens.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/internal/handlers/AckFailureResponseHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="44" lean-forward="true" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/internal/util/ErrorUtil.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/QunaerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="61" column="47" lean-forward="true" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/internal/retry/ExponentialBackoffRetryLogic.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/HelloWorldExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/internal/NetworkSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="157" column="29" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/entertainMent.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/xcHotel.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jdk/jdk1.8.0_181/src.zip!/java/io/BufferedReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/Shopping.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/ConnectionPoolFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/Catering.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/MapBeans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/v1/StatementRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/v1/Transaction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/neo4j/driver/neo4j-java-driver/1.6.2/neo4j-java-driver-1.6.2.jar!/org/neo4j/driver/v1/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jdk/jdk1.8.0_181/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="431" column="13" selection-start-line="431" selection-start-column="13" selection-end-line="431" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jdk/jdk1.8.0_181/jre/lib/rt.jar!/sun/misc/FloatingDecimal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="296" selection-start-line="296" selection-end-line="296" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/ridingStatus.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/ridingError.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-81265">
+          <caret line="9" column="67" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/walkingStatus.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/walkingError.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15914" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/drivingError.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingCarNeo4jUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3780">
-          <caret line="157" column="33" lean-forward="true" selection-start-line="157" selection-start-column="33" selection-end-line="157" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="1254">
+          <caret line="66" column="33" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CacluDistanceBeans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/DomainUtilsPackage/DianPingCateringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4401">
-          <caret line="194" column="17" lean-forward="true" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+        <state relative-caret-position="2926">
+          <caret line="158" column="33" selection-start-line="158" selection-start-column="33" selection-end-line="158" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingEntertainmentNeo4jUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/LogsUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="233" column="134" lean-forward="true" selection-start-line="233" selection-start-column="134" selection-end-line="233" selection-end-column="134" />
-          <folding />
+        <state relative-caret-position="132">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/Neo4jUtilsPackage/DianpingHealthNeo4jUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/ThreeDistanceBeans.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="71" lean-forward="true" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
-          <folding />
+        <state relative-caret-position="263">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding>
+            <element signature="e#179#180#0" expanded="true" />
+            <element signature="e#208#209#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#471#472#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#840#841#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#1004#1005#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
+            <element signature="e#1347#1348#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/CommonUtilsPackage/ConnectionPoolFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/knowledge/Utils/testUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="37" column="52" lean-forward="false" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="141" column="60" selection-start-line="141" selection-start-column="60" selection-end-line="141" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

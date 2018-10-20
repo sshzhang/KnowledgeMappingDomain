@@ -43,6 +43,10 @@ public class testUtils  {
                 try {
 
                     StatementResult run = transaction.run("match(n:Shopping) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
+
+                    transaction.success();
+                    transaction.close();
+                    transaction = session.beginTransaction();
                     while (run.hasNext()) {
                         Record next = run.next();
                         String id = next.get("id").toString();
@@ -54,12 +58,15 @@ public class testUtils  {
 
                     }
 
+
+                    System.out.println("XCHotel");
+                    StatementResult XCHotel = transaction.run("match(n:XCHotel) return id(n) as id , n.Shope_name as shop_name,n.latitude as latitude, n.longitude as longitude");
+
                     transaction.success();
                     transaction.close();
 
                     transaction = session.beginTransaction();
-                    System.out.println("XCHotel");
-                    StatementResult XCHotel = transaction.run("match(n:XCHotel) return id(n) as id , n.Shope_name as shop_name,n.latitude as latitude, n.longitude as longitude");
+
                     while (XCHotel.hasNext()) {
                         Record next = XCHotel.next();
                         String id = next.get("id").toString();
@@ -71,10 +78,12 @@ public class testUtils  {
                     }
                     System.out.println("Catering!");
 
-                    transaction.success();
+
+                    StatementResult Catering = transaction.run("match(n:Catering) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
+
+                    transaction.success();//MATCH (n:Catering) RETURN  count(n)  MATCH (n:Entertainment) RETURN count(n) MATCH (n:Sight) RETURN count(n) MATCH (n:Shopping) RETURN count(n)
                     transaction.close();
                     transaction = session.beginTransaction();
-                    StatementResult Catering = transaction.run("match(n:Catering) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
                     while (XCHotel.hasNext()) {
                         Record next = Catering.next();
                         String id = next.get("id").toString();
@@ -85,13 +94,15 @@ public class testUtils  {
                         System.out.println(id + " " + shop_name + " " + latitude + " " + longitude);
                         cacluDistanceBeans.add(new CacluDistanceBeans(id, shop_name,Double.parseDouble(longitude), Double.parseDouble(latitude)));
                     }
+
+                    StatementResult Entertainment = transaction.run("match(n:Entertainment) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
+
                     transaction.success();
                     transaction.close();
 
                     System.out.println("Entertainment!");
 
                     transaction = session.beginTransaction();
-                    StatementResult Entertainment = transaction.run("match(n:Entertainment) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
                     while (Entertainment.hasNext()) {
                         Record next = Entertainment.next();
                         String id = next.get("id").toString();
@@ -102,12 +113,14 @@ public class testUtils  {
                         cacluDistanceBeans.add(new CacluDistanceBeans(id, shop_name, Double.parseDouble(longitude), Double.parseDouble(latitude)));
                     }
 
+
+                    StatementResult Sight = transaction.run("match(n:Sight) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
+
                     transaction.success();
                     transaction.close();
                     transaction = session.beginTransaction();
                     System.out.println("Sight!");
-                    StatementResult Sight = transaction.run("match(n:Sight) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
-                    while (Sight.hasNext()) {
+                   while (Sight.hasNext()) {
                         Record next = Sight.next();
                         String id = next.get("id").toString();
                         String shop_name = next.get("shop_name").toString();
@@ -126,7 +139,7 @@ public class testUtils  {
 
 //        System.out.println(cacluDistanceBeans.size());
 //         driverInfo = ConnectionPoolFactory.getDriverInfo(Thread.currentThread().getName());
-        System.out.println(cacluDistanceBeans.size());
+        System.out.println(cacluDistanceBeans.size());//2743
 
          transaction= session.beginTransaction();
 //        session.writeTransaction(new TransactionWork<Object>() {
@@ -134,15 +147,15 @@ public class testUtils  {
 //            @Override
 //            public Object execute(Transaction transaction) {
 
-
+              //6L6IwXtvhtO0km9sL7xhrMzYtd0XT3jc,tKyrgzxSKULOO4WjGVVTZErNGlaoDnPu
+              // 0f4F1z3PUloGG6loN4kDYLv1m6a6jj9s,gvlhGVLyBNwCVKitCh3qEUXGj3lBWUzj,oZ82ND9lsfohdBdACgBW7uuGCG929hIS
+        int countaks = 0;
+            String[] aks = new String[]{"b2ozUNpLV3szNtcI2j2IeaWWIwDEnCEk","t6LikujmGiMvLOEq5LFWPIPgnsygHFsx","tKyrgzxSKULOO4WjGVVTZErNGlaoDnPu", "0f4F1z3PUIoGG6loN4kDYLv1m6a6jj9s", "gvlhGVLyBNwCVKitCh3qEUXGj3lBWUzj", "oZ82ND9lsfohdBdACgBW7uuGCG929hIS", "6L6IwXtvhtO0km9sL7xhrMzYtd0XT3jc", "kpwTOTTQzFF7yvdtqhieuG3zpzwLANeW"};
                 for (int i = 0; i < cacluDistanceBeans.size(); i++) {
 
                     for (int j = i + 1; j < cacluDistanceBeans.size(); j++) {
                         CacluDistanceBeans before = cacluDistanceBeans.get(i);
                         CacluDistanceBeans after = cacluDistanceBeans.get(j);
-
-
-
 
                         //骑行
                         String url = "http://api.map.baidu.com/routematrix/v2/";
@@ -152,7 +165,7 @@ public class testUtils  {
                         if (!run.hasNext()) {
 
                             try {
-                                String ridingUrl = url + "riding?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak=kpwTOTTQzFF7yvdtqhieuG3zpzwLANeW";
+                                String ridingUrl = url + "riding?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak="+aks[countaks]+"";
 
                                 System.out.println(ridingUrl);
                                 URL url1 = new URL(ridingUrl);
@@ -172,9 +185,22 @@ public class testUtils  {
                                     Discription duration = locations.getDuration();
                                     System.out.println("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:ridingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
                                     transaction.run("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:ridingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
-                                }else{
+                                } else if (mapBeans.getStatus() == 302) {
+                                    transaction.success();
+                                    transaction.close();
+                                    transaction = session.beginTransaction();
 
-                                    LogsUtils.WriteTheDataToFile(before.getId()+"  "+after.getId() + "\n" + "\n\n", "src/resources/ridingStatus.txt");
+                                    if (countaks == aks.length - 1) {
+
+                                        session.close();
+                                        ConnectionPoolFactory.close();
+                                        return;
+                                    }
+                                    countaks = countaks + 1;
+
+                                } else {
+
+                                    LogsUtils.WriteTheDataToFile(before.getId() + "  " + after.getId() + "\n" + "\n\n", "src/resources/ridingStatus.txt");
                                     continue;
                                 }
                             } catch (Exception ex) {
@@ -182,6 +208,10 @@ public class testUtils  {
 
                             }finally {
 
+                                transaction.success();
+                                transaction.close();
+                                if(session.isOpen())
+                                transaction = session.beginTransaction();
                             }
 
                         }
@@ -196,8 +226,8 @@ public class testUtils  {
                         if (!run.hasNext()) {
 
                             try {
-                                String waljinggUrl = url + "walking?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak=kpwTOTTQzFF7yvdtqhieuG3zpzwLANeW";
-
+                                String waljinggUrl = url + "walking?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak="+aks[countaks]+"";
+                                System.out.println(waljinggUrl);
                                 URL url1 = new URL(waljinggUrl);
                                 URLConnection connection = url1.openConnection();
                                 InputStream inputStream =
@@ -215,7 +245,22 @@ public class testUtils  {
                                     Discription duration = locations.getDuration();
                                     System.out.println("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:walkingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
                                     transaction.run("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:walkingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
-                                }else{
+                                }
+                                else if (mapBeans.getStatus() == 302) {
+                                    transaction.success();
+                                    transaction.close();
+                                    transaction = session.beginTransaction();
+
+                                    if (countaks == aks.length - 1) {
+
+                                        session.close();
+                                        ConnectionPoolFactory.close();
+                                        return;
+                                    }
+                                    countaks = countaks + 1;
+
+                                }
+                                else{
 
                                     LogsUtils.WriteTheDataToFile(before.getId()+"  "+after.getId() + "\n" + "\n\n", "src/resources/walkingStatus.txt");
                                     continue;
@@ -225,19 +270,24 @@ public class testUtils  {
 
                             }finally {
 
+                                transaction.success();
+                                transaction.close();
+                                if(session.isOpen())
+                                transaction = session.beginTransaction();
                             }
                         }
 
 
 
 
-                        run = transaction.run("match(n)-[r:walkingDistance]-(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " return r");
+                        run = transaction.run("match(n)-[r:drivingDistance]-(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " return r");
 
                         if (!run.hasNext()) {
 
                             try {
-                                String waljinggUrl = url + "driving?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak=kpwTOTTQzFF7yvdtqhieuG3zpzwLANeW";
+                                String waljinggUrl = url + "driving?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak="+aks[countaks]+"";
 
+                                System.out.println(waljinggUrl);
                                 URL url1 = new URL(waljinggUrl);
                                 URLConnection connection = url1.openConnection();
                                 InputStream inputStream =
@@ -255,8 +305,22 @@ public class testUtils  {
                                     Discription duration = locations.getDuration();
                                     System.out.println("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:drivingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
                                     transaction.run("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:drivingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
-                                }else{
 
+                                }
+                                else if (mapBeans.getStatus() == 302) {
+                                    transaction.success();
+                                    transaction.close();
+                                    transaction = session.beginTransaction();
+                                    if (countaks == aks.length - 1) {
+
+                                        session.close();
+                                        ConnectionPoolFactory.close();
+                                        return;
+                                    }
+                                    countaks = countaks + 1;
+
+                                }
+                                else{
                                     LogsUtils.WriteTheDataToFile(before.getId()+"  "+after.getId() + "\n" + "\n\n", "src/resources/drivingStatus.txt");
                                     continue;
                                 }
@@ -265,6 +329,7 @@ public class testUtils  {
                             }finally {
                                 transaction.success();
                                 transaction.close();
+                                if(session.isOpen())
                                 transaction = session.beginTransaction();
                             }
 
