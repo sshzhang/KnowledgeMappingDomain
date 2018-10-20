@@ -59,7 +59,7 @@ public class testUtils  {
                     }
 
 
-                    System.out.println("XCHotel");
+                    System.out.println("XCHotel"+cacluDistanceBeans.size());
                     StatementResult XCHotel = transaction.run("match(n:XCHotel) return id(n) as id , n.Shope_name as shop_name,n.latitude as latitude, n.longitude as longitude");
 
                     transaction.success();
@@ -76,7 +76,7 @@ public class testUtils  {
                         System.out.println(id + " " + shop_name + " " + latitude + " " + longitude);
                         cacluDistanceBeans.add(new CacluDistanceBeans(id, shop_name,Double.parseDouble(longitude), Double.parseDouble(latitude)));
                     }
-                    System.out.println("Catering!");
+                    System.out.println("Catering!"+cacluDistanceBeans.size());
 
 
                     StatementResult Catering = transaction.run("match(n:Catering) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
@@ -84,25 +84,26 @@ public class testUtils  {
                     transaction.success();//MATCH (n:Catering) RETURN  count(n)  MATCH (n:Entertainment) RETURN count(n) MATCH (n:Sight) RETURN count(n) MATCH (n:Shopping) RETURN count(n)
                     transaction.close();
                     transaction = session.beginTransaction();
-                    while (XCHotel.hasNext()) {
+                    while (Catering.hasNext()) {
                         Record next = Catering.next();
                         String id = next.get("id").toString();
                         String shop_name = next.get("shop_name").toString();
-                        if (next.get("latitude") == null) continue;
+                        if (next.get("latitude").toString() == "NULL") continue;
                         String latitude = next.get("latitude").toString().replace("\"","");
                         String longitude = next.get("longitude").toString().replace("\"","");
                         System.out.println(id + " " + shop_name + " " + latitude + " " + longitude);
                         cacluDistanceBeans.add(new CacluDistanceBeans(id, shop_name,Double.parseDouble(longitude), Double.parseDouble(latitude)));
                     }
 
+                    System.out.println("Entertainment!"+cacluDistanceBeans.size());
                     StatementResult Entertainment = transaction.run("match(n:Entertainment) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
 
                     transaction.success();
                     transaction.close();
 
-                    System.out.println("Entertainment!");
-
                     transaction = session.beginTransaction();
+
+
                     while (Entertainment.hasNext()) {
                         Record next = Entertainment.next();
                         String id = next.get("id").toString();
@@ -114,12 +115,13 @@ public class testUtils  {
                     }
 
 
+                    System.out.println("Sight!"+cacluDistanceBeans.size());
+
                     StatementResult Sight = transaction.run("match(n:Sight) return id(n) as id , n.shop_name as shop_name,n.latitude as latitude, n.longitude as longitude");
 
                     transaction.success();
                     transaction.close();
                     transaction = session.beginTransaction();
-                    System.out.println("Sight!");
                    while (Sight.hasNext()) {
                         Record next = Sight.next();
                         String id = next.get("id").toString();
@@ -150,7 +152,7 @@ public class testUtils  {
               //6L6IwXtvhtO0km9sL7xhrMzYtd0XT3jc,tKyrgzxSKULOO4WjGVVTZErNGlaoDnPu
               // 0f4F1z3PUloGG6loN4kDYLv1m6a6jj9s,gvlhGVLyBNwCVKitCh3qEUXGj3lBWUzj,oZ82ND9lsfohdBdACgBW7uuGCG929hIS
         int countaks = 0;
-            String[] aks = new String[]{"b2ozUNpLV3szNtcI2j2IeaWWIwDEnCEk","t6LikujmGiMvLOEq5LFWPIPgnsygHFsx","tKyrgzxSKULOO4WjGVVTZErNGlaoDnPu", "0f4F1z3PUIoGG6loN4kDYLv1m6a6jj9s", "gvlhGVLyBNwCVKitCh3qEUXGj3lBWUzj", "oZ82ND9lsfohdBdACgBW7uuGCG929hIS", "6L6IwXtvhtO0km9sL7xhrMzYtd0XT3jc", "kpwTOTTQzFF7yvdtqhieuG3zpzwLANeW"};
+            String[] aks = new String[]{"b2ozUNpLV3szNtcI2j2IeaWWIwDEnCEk","2ynek6xN5FXAjamGnLolcPuz6bVgAloR","t6LikujmGiMvLOEq5LFWPIPgnsygHFsx","tKyrgzxSKULOO4WjGVVTZErNGlaoDnPu", "0f4F1z3PUIoGG6loN4kDYLv1m6a6jj9s", "gvlhGVLyBNwCVKitCh3qEUXGj3lBWUzj", "oZ82ND9lsfohdBdACgBW7uuGCG929hIS", "6L6IwXtvhtO0km9sL7xhrMzYtd0XT3jc", "kpwTOTTQzFF7yvdtqhieuG3zpzwLANeW"};
                 for (int i = 0; i < cacluDistanceBeans.size(); i++) {
 
                     for (int j = i + 1; j < cacluDistanceBeans.size(); j++) {
@@ -164,6 +166,7 @@ public class testUtils  {
 
                         if (!run.hasNext()) {
 
+                            System.out.println(before.getId() + " " + after.getId());
                             try {
                                 String ridingUrl = url + "riding?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak="+aks[countaks]+"";
 
@@ -225,6 +228,7 @@ public class testUtils  {
 
                         if (!run.hasNext()) {
 
+                            System.out.println(before.getId() + " " + after.getId());
                             try {
                                 String waljinggUrl = url + "walking?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak="+aks[countaks]+"";
                                 System.out.println(waljinggUrl);
@@ -284,6 +288,7 @@ public class testUtils  {
 
                         if (!run.hasNext()) {
 
+                            System.out.println(before.getId() + " " + after.getId());
                             try {
                                 String waljinggUrl = url + "driving?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak="+aks[countaks]+"";
 
