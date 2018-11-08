@@ -1,5 +1,10 @@
 package com.knowledge.Utils;
 
+import com.knowledge.Utils.CommonUtilsPackage.LogsUtils;
+
+import java.io.*;
+import java.net.URL;
+
 public class CacluDistanceBeans {
 
     private String id;
@@ -52,5 +57,17 @@ public class CacluDistanceBeans {
 
     public void setLatitude(double latitude) {
         this.latitude = latitude;
+    }
+
+    public static void main(String... args) throws IOException {
+        InputStream resourceAsStream =
+                CacluDistanceBeans.class.getResourceAsStream("/drivingError.txt");
+
+        System.out.println(CacluDistanceBeans.class.getResource("/" + "walkingexclusive.txt").getPath());
+        System.out.println(resourceAsStream.available());
+        System.out.println(CacluDistanceBeans.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+
+        System.out.println(LogsUtils.class.getResource("/").getPath());
+        System.out.println(ClassLoader.getSystemResource("walkingexclusive.txt").getPath());
     }
 }
