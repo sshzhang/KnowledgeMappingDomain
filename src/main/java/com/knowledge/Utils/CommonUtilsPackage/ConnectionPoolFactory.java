@@ -11,7 +11,7 @@ import java.util.Set;
 public class ConnectionPoolFactory {
 
     private static final Map<String, Driver> connPools = new HashMap<>();
-    protected static final String uri = "bolt://10.1.17.38:7687";
+    protected static final String uri = "bolt://172.16.155.182:7687";
     protected  static final String user="neo4j";
     protected static final String password = "neo4j";
 
@@ -25,7 +25,7 @@ public class ConnectionPoolFactory {
         }else{
             driver = connPools.get(key);
         }
-        LogsUtils.WriteTheDataToFile(connPools.size() + "", "/home/xiujiezhang/IdeaProjects/KnowledgeMappingDomain/src/resources/count.txt");
+        LogsUtils.WriteTheDataToFile(connPools.size() + "", "/home/zxj/scriptfile/KnowledgeMappingDomain/count.txt");
 
         return driver;
     }

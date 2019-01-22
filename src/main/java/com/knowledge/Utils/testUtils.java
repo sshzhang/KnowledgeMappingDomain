@@ -15,6 +15,7 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -155,67 +156,73 @@ public class testUtils {
         // 0f4F1z3PUloGG6loN4kDYLv1m6a6jj9s,gvlhGVLyBNwCVKitCh3qEUXGj3lBWUzj,oZ82ND9lsfohdBdACgBW7uuGCG929hIS
         int countaks = 0;
 
-        List<idStrcuts> ridings = LogsUtils.ReadTheDataToFile("ridingexclusive.txt");
-        List<idStrcuts> drivings = LogsUtils.ReadTheDataToFile("drivingexclusive.txt");
-        List<idStrcuts> walkings = LogsUtils.ReadTheDataToFile("walkingexclusive.txt");
-        System.out.println("walkingssize:" + walkings.size() + " ");
+//        List<idStrcuts> ridings = LogsUtils.ReadTheDataToFile("ridingexclusive.txt");
+//        List<idStrcuts> drivings = LogsUtils.ReadTheDataToFile("drivingexclusive.txt");
+//        List<idStrcuts> walkings = LogsUtils.ReadTheDataToFile("walkingexclusive.txt");
+//        System.out.println("walkingssize:" + walkings.size() + " ");
         String[] aks = new String[]{"b2ozUNpLV3szNtcI2j2IeaWWIwDEnCEk", "2ynek6xN5FXAjamGnLolcPuz6bVgAloR", "t6LikujmGiMvLOEq5LFWPIPgnsygHFsx", "tKyrgzxSKULOO4WjGVVTZErNGlaoDnPu", "0f4F1z3PUIoGG6loN4kDYLv1m6a6jj9s", "gvlhGVLyBNwCVKitCh3qEUXGj3lBWUzj", "oZ82ND9lsfohdBdACgBW7uuGCG929hIS", "6L6IwXtvhtO0km9sL7xhrMzYtd0XT3jc", "kpwTOTTQzFF7yvdtqhieuG3zpzwLANeW"};
-        for (int i = 0; i < cacluDistanceBeans.size(); i++) {
+        int i = 0, j = 0;
 
-            for (int j = i + 1; j < cacluDistanceBeans.size(); j++) {
+        Map<String, Integer> stringIntegerMap = LogsUtils.ReadTheDataToFile("lastIndex.txt", "i=(\\d+):j=(\\d+)");
+
+        i = stringIntegerMap.getOrDefault("i", cacluDistanceBeans.size() - 1);
+        j = stringIntegerMap.getOrDefault("j", i - 1);
+        System.out.println("startIndex i=" + i + " j=" + j);
+        for (; i >= 0; i--) {
+            j = j <= 0 ? i - 1 : j;
+            for (; j >= 0; j--) {
                 CacluDistanceBeans before = cacluDistanceBeans.get(i);
                 CacluDistanceBeans after = cacluDistanceBeans.get(j);
-
                 //骑行
                 String url = "http://api.map.baidu.com/routematrix/v2/";
 
                 StatementResult run = transaction.run("match(n)-[r:ridingDistance]-(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " return r");
 
-                if (!ridings.contains(new idStrcuts(before.getId(), after.getId())) && !run.hasNext()) {
+                if (!run.hasNext()) {
 
                     System.out.println(before.getId() + " " + after.getId());
-                    try {
-                        String ridingUrl = url + "riding?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak=" + aks[countaks] + "";
+                                                                    try {
+                                                                        String ridingUrl = url + "riding?" + "output=json&origins=" + before.getLatitude() + "," + before.getLongitude() + "&destinations=" + after.getLatitude() + "," + after.getLongitude() + "&ak=" + aks[countaks] + "";
 
-                        System.out.println(ridingUrl);
-                        URL url1 = new URL(ridingUrl);
-                        URLConnection connection = url1.openConnection();
-                        InputStream inputStream =
-                                connection.getInputStream();
-                        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
-                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                        String s = bufferedReader.readLine();
-                        System.out.println(s);
-                        ThreeDistanceBeans mapBeans = JSON.parseObject(s, ThreeDistanceBeans.class);
+                                                                        System.out.println(ridingUrl);
+                                                                        URL url1 = new URL(ridingUrl);
+                                                                        URLConnection connection = url1.openConnection();
+                                                                        InputStream inputStream =
+                                                                                connection.getInputStream();
+                                                                        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+                                                                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                                                                        String s = bufferedReader.readLine();
+                                                                        System.out.println(s);
+                                                                        ThreeDistanceBeans mapBeans = JSON.parseObject(s, ThreeDistanceBeans.class);
 
-                        if (mapBeans.getStatus() == 0) {
+                                                                        if (mapBeans.getStatus() == 0) {
 
-                            Locations locations = mapBeans.getResult()[0];
-                            Discription distance = locations.getDistance();
-                            Discription duration = locations.getDuration();
-                            System.out.println("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:ridingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
-                            transaction.run("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:ridingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
-                        } else if (mapBeans.getStatus() == 302) {
-                            transaction.success();
-                            transaction.close();
-                            transaction = session.beginTransaction();
+                                                                            Locations locations = mapBeans.getResult()[0];
+                                                                            Discription distance = locations.getDistance();
+                                                                            Discription duration = locations.getDuration();
+                                                                            System.out.println("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:ridingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
+                                                                            transaction.run("match(n),(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " merge (n)-[r:ridingDistance{distance:\"" + distance.getText() + "-" + distance.getValue() + "\",time:\"" + duration.getText() + "-" + duration.getValue() + "\"}]-(m) ");
+                                                                        } else if (mapBeans.getStatus() == 302) {
+                                                                            transaction.success();
+                                                                            transaction.close();
+                                                                            transaction = session.beginTransaction();
 
-                            if (countaks == aks.length - 1) {
+                                                                            if (countaks == aks.length - 1) {
+                                                                                LogsUtils.WriteTheDataToFile("i=" + i + ":" + "j=" + j, "lastIndex.txt", false);
+                                                                                session.close();
+                                                                                ConnectionPoolFactory.close();
+                                                                                return;
+                                                                            }
+                                                                            countaks = countaks + 1;
 
-                                session.close();
-                                ConnectionPoolFactory.close();
-                                return;
-                            }
-                            countaks = countaks + 1;
-
-                        } else if (mapBeans.getStatus() == 2) {
-                            LogsUtils.WriteTheDataToFile(before.getId() + " " + after.getId(), "ridingexclusive.txt");
-                            continue;
-                        } else {
-                            LogsUtils.WriteTheDataToFile(before.getId() + "  " + after.getId() + "\n" + "\n\n", "ridingStatus.txt");
-                            continue;
-                        }
-                    } catch (Exception ex) {
+                                                                        } else if (mapBeans.getStatus() == 2) {
+                                                                            LogsUtils.WriteTheDataToFile(before.getId() + " " + after.getId(), "ridingexclusive.txt");
+                                                                            continue;
+                                                                        } else {
+                                                                            LogsUtils.WriteTheDataToFile(before.getId() + "  " + after.getId() + "\n" + "\n\n", "ridingStatus.txt");
+                                                                            continue;
+                                                                        }
+                                                                    } catch (Exception ex) {
                         LogsUtils.WriteTheDataToFile(before.getId() + "  " + after.getId() + "\n" + ex.getMessage() + "\n\n", "ridingError.txt");
 
                     } finally {
@@ -230,7 +237,7 @@ public class testUtils {
 
                 run = transaction.run("match(n)-[r:drivingDistance]-(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " return r");
 
-                if (!drivings.contains(new idStrcuts(before.getId(), after.getId())) && !run.hasNext()) {
+                if (!run.hasNext()) {
 
                     System.out.println(before.getId() + " " + after.getId());
                     try {
@@ -260,7 +267,7 @@ public class testUtils {
                             transaction.close();
                             transaction = session.beginTransaction();
                             if (countaks == aks.length - 1) {
-
+                           LogsUtils.WriteTheDataToFile("i=" + i + ":" + "j=" + j, "lastIndex.txt", false);
                                 session.close();
                                 ConnectionPoolFactory.close();
                                 return;
@@ -290,7 +297,7 @@ public class testUtils {
 
                 run = transaction.run("match(n)-[r:walkingDistance]-(m) where id(n)=" + before.getId() + " and id(m)=" + after.getId() + " return r");
 
-                if (!walkings.contains(new idStrcuts(before.getId(), after.getId())) && !run.hasNext()) {
+                if ( !run.hasNext()) {
 
                     System.out.println(before.getId() + " " + after.getId());
                     try {
@@ -319,7 +326,7 @@ public class testUtils {
                             transaction = session.beginTransaction();
 
                             if (countaks == aks.length - 1) {
-
+                             LogsUtils.WriteTheDataToFile("i=" + i + ":" + "j=" + j, "lastIndex.txt", false);
                                 session.close();
                                 ConnectionPoolFactory.close();
                                 return;
@@ -336,9 +343,7 @@ public class testUtils {
                         }
                     } catch (Exception ex) {
                         LogsUtils.WriteTheDataToFile(before.getId() + "  " + after.getId() + "\n" + ex.getMessage() + "\n\n", "walkingError.txt");
-
                     } finally {
-
                         transaction.success();
                         transaction.close();
                         if (session.isOpen())
@@ -349,9 +354,12 @@ public class testUtils {
             }
         }
 
-        walkings = null;
-        ridings = null;
-        drivings = null;
+//        walkings = null;
+//        ridings = null;
+//        drivings = null;
+
+
+        LogsUtils.WriteTheDataToFile("i=" + i + ":" + "j=" + j, "lastIndex.txt", false);
 
         transaction.success();
         transaction.close();
